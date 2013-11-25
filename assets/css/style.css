@@ -1,0 +1,20 @@
+html,body{
+	font-size:13px;
+	color:#939699;
+	background-color:#fff;
+}
+
+.kale{
+	border:1px solid #c7c7c7;
+}
+
+.header-top{
+	background-color: #ed6f58;
+	min-height:10px;
+}
+
+.header-main{
+	background-color: #fff;
+	padding: 20px 0px;
+	box-shadow: 0px 3px 9px #888888;
+}
