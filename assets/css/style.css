@@ -1,0 +1,258 @@
+html,body{
+	font-size:13px;
+	color:#939699;
+	background-color:#fff;
+}
+
+img{
+	width:100%;
+	height: auto;
+}
+
+.clear{
+	padding: 10px;
+}
+
+.rounded{
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+.navbar-default{
+	background-color: #fff;
+}
+
+.navbar{
+	border:none;
+}
+
+
+.kale{
+	border:1px solid #c7c7c7;
+}
+
+.header-top{
+	background-color: #ed6f58;
+	min-height:10px;
+}
+
+.header-main{
+	background-color: #fff;
+	padding: 20px 0px;
+	box-shadow: 0px 3px 9px #888888;
+}
+.inn-nav{
+
+}
+
+.inn-nav ul{
+	padding-left:10px;
+	padding-top: 10px
+}
+.inn-nav ul li{
+	font-family:'brandon-grotesque',sans-serif; 
+	display:inline;
+	margin-left: 30px;
+
+}
+.inn-nav a{
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color:#444135 !important;
+	padding:0 !important;
+
+}
+.inn-nav a:hover{
+	text-decoration:none;
+	color:#ed6f58 !important;
+	/*border-top:2px solid #444135 !important;*/
+}
+
+.navbar-brand{
+	padding: 0px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+
+
+.main-search-wrap{
+	background-color: #ed6f58;
+	padding: 20px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+label{
+	color:#444153;
+	text-transform: uppercase;
+	font-size: 12px !important;
+}
+
+.search-btn{
+	margin-top: 23px;
+}
+
+.search-head h1{
+	margin: 0 !important;
+	color: #444153;
+	padding: 15px 0px;
+	font-size: 26px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0px;
+	border-bottom: 1px solid #525252;
+}
+
+.datepicker{
+	background-image:url("../images/calender.png");
+	background-size: 25px auto;
+	background-repeat: no-repeat;
+	background-position: right 5px bottom 4px;
+	cursor: pointer;
+}
+
+
+.breadcrumb li a{
+	color:#ed6f58;
+}
+
+.result{
+	background-color: #F8F8F8;
+	padding-top: 15px;
+}
+
+.hotel-place h1{
+	font-size: 22px;
+	color: #444135;
+}
+
+.result-details span{
+	color: #444135;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.hotel-search-title h1{
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 5px 0px;
+}
+
+.hotel-search-title h1 a{
+	color: #ed6f58;
+}
+
+
+.short-desc{
+	color: #777777;
+}
+
+.short-desc a{
+	color:#ed6f58;
+}
+
+.search-review span{
+	font-size: 20px;
+	color: #444153;
+}
+
+.price-range span{
+	font-size: 17px;
+	color:#ed6f58;
+	font-weight: bold;
+}
+
+.price-range p{
+	font-size: 17px;
+	/*color:#ed6f58;*/
+	font-weight: bold;
+}
+
+.inn-button{
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #444135;
+	color: #ed6f58;
+}
+
+.inn-button:hover{
+	color: #ed6f58;
+	background-color: #1D1D1B;
+}
+
+.hor-form-btn{
+	margin-top: 23px;
+}
+
+.overview-wrap{
+	background-color: #f8f8f8;
+	border: 1px solid #c7c7c7;
+}
+
+.details-head h1{
+	color: #ed6f58;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	border-bottom: 1px solid #ed6f58;
+}
+
+.col-padding{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+}
+
+.col-padding-first{
+	padding-left:15px;
+	padding-top: 5px;
+}
+
+.col-padding-last{
+	padding-right: 15px;
+	padding-top: 5px;
+}
+
+.latest-review-head p,
+.total-review p{
+	font-size: 19px;
+	color: #ed6f58;
+}
+
+.total-review span{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.rating-cat p{
+	float: right;
+	color:#939699;
+}
+
+.rating-cat{
+	color: #ed6f58;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.one-review a{
+	color: #ed6f58;
+}
+
+.one-review p{
+	font-size: 14px;
+	color:#939699;
+}
+
+.facility{
+	margin-bottom: 15px;
+}
