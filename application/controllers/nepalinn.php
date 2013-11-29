@@ -2,7 +2,7 @@
 
 class Nepalinn extends CI_Controller {
 
-	
+	//Controller for Home page	
 	public function index()
 	{
 		$data['title'] = 'Nepalinn | Home';
