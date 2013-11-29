@@ -14,6 +14,7 @@ img{
 }
 
 .rounded{
+	border: 1px solid #c7c7c7;
 	border-radius:10px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -190,6 +191,7 @@ label{
 
 .hor-form-btn{
 	margin-top: 23px;
+	margin-left: 15px;
 }
 
 .overview-wrap{
@@ -253,6 +255,50 @@ label{
 	color:#939699;
 }
 
-.facility{
+.facility,
+.rate-review{
 	margin-bottom: 15px;
 }
+
+.room-display-head{
+	font-size: 16px;
+	color: #ed6f58;
+}
+
+.room-display-head p{
+	font-size: 11px;
+	color:#939699;
+}
+
+.table-wrap{
+	border: 2px solid #c7c7c7;
+	padding:10px;
+}
+
+.room-type{
+	color: #0c5c88;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.room-type-desc{
+	font-size: 11px;
+}
+
+.room-row-wrap{
+	border-top: 1px solid #c7c7c7;
+	padding-top: 10px;
+}
+
+.room-display{
+	padding: 8px;
+	background-color: #ed6f58;
+	text-align: center;
+	color: #fff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+

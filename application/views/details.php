@@ -106,11 +106,11 @@
 								<h1>Aviability and Rates</h1>
 							</div>
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-2 col-xs-6 col-sm-3">
 							<label>Check In:</label>
 							<input type="text" class="form-control datepicker">
 						</div>
-						<div class="col-md-2">
+						<div class="col-md-2 col-xs-6 col-sm-3">
 							<label>Check Out:</label>
 							<input type="text" class="form-control datepicker">
 						</div>
@@ -122,6 +122,180 @@
 								Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo Lorem ipsum dolor sit amet,</p>
 						</div>
 					</div> <!--ends:Aviability and rates -->
+					<div class="clear"></div>
+
+					<div class="row"><!--starts:Aviability table -->
+						<div class="col-md-12">
+							<div class="rounded table-wrap"><!-- starts:table-wrap -->
+								<div class="row">  <!-- starts:head row -->
+									<div class='col-md-4 col-xs-4 col-sm-4'>
+										<div class="room-display-head">
+											Room Type
+											<p>Click on a room type to view more information.</p>
+										</div>
+									</div>
+									<div class='col-md-7 col-xs-5 col-sm-6'>
+										<div class=" room-display-head">
+											Rooms
+											<p>Click on a room to select it.</p>
+										</div>
+									</div>
+									<div class='col-md-1 col-xs-3 col-sm-2'>
+										<div class="room-display-head">
+											Guests
+										</div>
+									</div>
+								</div>  <!-- ends:head row -->
+
+								<div class="row"> <!-- starts:room-row -->
+									<div class="col-md-12">
+										<div class="room-row-wrap">
+											<div class="col-md-4 col-xs-4 col-sm-4">
+												<div class="room-type">
+													Delux Room
+												</div>
+												<div class="room-type-desc">
+													<p>lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.</p>
+												</div>
+											</div>
+											<div class="col-md-7 col-xs-5 col-sm-6">
+												<div class="room-select">
+													<div class="row">
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+													</div>
+												</div>
+											</div>
+											<div class="col-md-1 col-xs-3 col-sm-2">
+												<div class="guest-no">
+													<select class="form-control">
+														<option>2</option>
+														<option>3</option>
+														<option>4</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- ends:room-row -->
+
+								<div class="row"> <!-- starts:room-row -->
+									<div class="col-md-12">
+										<div class="room-row-wrap">
+											<div class="col-md-4 col-xs-4 col-sm-4">
+												<div class="room-type">
+													Delux Room
+												</div>
+												<div class="room-type-desc">
+													<p>lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.</p>
+												</div>
+											</div>
+											<div class="col-md-7 col-xs-5 col-sm-6">
+												<div class="room-select">
+													<div class="row">
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+													</div>
+												</div>
+											</div>
+											<div class="col-md-1 col-xs-3 col-sm-2">
+												<div class="guest-no">
+													<select class="form-control">
+														<option>2</option>
+														<option>3</option>
+														<option>4</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- ends:room-row -->
+
+								<div class="row"> <!-- starts:room-row -->
+									<div class="col-md-12">
+										<div class="room-row-wrap">
+											<div class="col-md-4 col-xs-4 col-sm-4">
+												<div class="room-type">
+													Delux Room
+												</div>
+												<div class="room-type-desc">
+													<p>lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.</p>
+												</div>
+											</div>
+											<div class="col-md-7 col-xs-5 col-sm-6">
+												<div class="room-select">
+													<div class="row">
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
+															<div class="room-display">201</div>
+														</div><!-- ends:a room -->
+													</div>
+												</div>
+											</div>
+											<div class="col-md-1 col-xs-3 col-sm-2">
+												<div class="guest-no">
+													<select class="form-control">
+														<option>2</option>
+														<option>3</option>
+														<option>4</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- ends:room-row -->
+
+
+
+							</div><!-- ends:table-wrap -->
+						</div>
+
+						<div class="col-md-12">
+							<div class="availability-btn">
+								<input type="submit" class="btn btn-default inn-button hor-form-btn">
+							</div>
+						</div>
+					</div><!--ends:Aviability table -->
 					<div class="clear"></div>
 
 					<div class="row"> <!-- Starts:facilities -->
@@ -157,6 +331,17 @@
 						<div class="col-md-12">
 							<div class="details-head">
 								<h1>Reviews</h1>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row">
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
 							</div>
 						</div>
 					</div>
