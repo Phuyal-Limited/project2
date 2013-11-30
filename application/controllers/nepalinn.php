@@ -61,4 +61,12 @@ class Nepalinn extends CI_Controller {
 		echo "<pre>";
 		echo ($available);
 	}
+
+	public function checkout()
+	{
+		$data['title'] = 'Nepalinn | Checkout';
+		$this->load->view('header', $data);
+		$this->load->view('checkout');
+		$this->load->view('footer');
+	}
 }

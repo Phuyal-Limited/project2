@@ -19,6 +19,19 @@
 			$( ".datepicker" ).datepicker();
 		});
 
+	//change color of selected room
+	$( "#change-color" ).click(function() {
+		var clr = $(this).css("background-color");
+		if(clr!='rgb(237, 111, 88)'){
+			$( this ).css( {"background-color": "#ed6f58" , "padding": "11px"} );
+			$('#selected').css({"display": "none"});
+		}else{
+			$( this ).css( {"background-color": "#1A71AC" , "padding": "3px"} );
+			$('#selected').css({"display": "block"});
+
+		}
+	  	
+	});
 
 
 </script>

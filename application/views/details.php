@@ -158,7 +158,7 @@
 													<p>lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.</p>
 												</div>
 											</div>
-											<div class="col-md-7 col-xs-5 col-sm-6">
+											<div class="col-md-8 col-xs-5 col-sm-6">
 												<div class="room-select">
 													<div class="row">
 														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
@@ -174,7 +174,7 @@
 															<div class="room-display">201</div>
 														</div><!-- ends:a room -->
 														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
-															<div class="room-display">201</div>
+															<div class="room-display" id="change-color">501 <p id="selected" style="display:none;">selected</p></div>
 														</div><!-- ends:a room -->
 														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
 															<div class="room-display">201</div>
@@ -183,15 +183,6 @@
 															<div class="room-display">201</div>
 														</div><!-- ends:a room -->
 													</div>
-												</div>
-											</div>
-											<div class="col-md-1 col-xs-3 col-sm-2">
-												<div class="guest-no">
-													<select class="form-control">
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-													</select>
 												</div>
 											</div>
 										</div>
@@ -209,7 +200,7 @@
 													<p>lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.</p>
 												</div>
 											</div>
-											<div class="col-md-7 col-xs-5 col-sm-6">
+											<div class="col-md-8 col-xs-5 col-sm-6">
 												<div class="room-select">
 													<div class="row">
 														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
@@ -225,15 +216,6 @@
 															<div class="room-display">201</div>
 														</div><!-- ends:a room -->
 													</div>
-												</div>
-											</div>
-											<div class="col-md-1 col-xs-3 col-sm-2">
-												<div class="guest-no">
-													<select class="form-control">
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-													</select>
 												</div>
 											</div>
 										</div>
@@ -251,7 +233,7 @@
 													<p>lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.lorem Ipsum Dolor Sit Amet.</p>
 												</div>
 											</div>
-											<div class="col-md-7 col-xs-5 col-sm-6">
+											<div class="col-md-8 col-xs-5 col-sm-6">
 												<div class="room-select">
 													<div class="row">
 														<div class="col-md-2 col-xs-6 col-sm-3"> <!-- starts:a room -->
@@ -270,15 +252,6 @@
 															<div class="room-display">201</div>
 														</div><!-- ends:a room -->
 													</div>
-												</div>
-											</div>
-											<div class="col-md-1 col-xs-3 col-sm-2">
-												<div class="guest-no">
-													<select class="form-control">
-														<option>2</option>
-														<option>3</option>
-														<option>4</option>
-													</select>
 												</div>
 											</div>
 										</div>

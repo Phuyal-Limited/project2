@@ -35,7 +35,7 @@
 								<label>Check Out:</label>
 								<input type="text" placeholder="To" class="form-control datepicker" name="checkOutDate" value='<?php echo $tomorrow; ?>'></div>
 							<div class="col-md-2 col-xs-12 col-sm-12">
-								<input type="submit" value="Search" class="btn btn-default search-btn inn-btn"></div>
+								<input type="submit" value="Search" class="btn btn-default search-btn inn-button"></div>
 						</div>
 							<div class="clear"></div>
 					</div>
