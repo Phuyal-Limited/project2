@@ -32,6 +32,14 @@ class Nepalinn extends CI_Controller {
 			$desc[0] = get_object_vars($desc[0]);
 			$desc[0]['description']=word_limiter($desc[0]['description'],28);
 			$desc[0]['rate']=$this->rooms->get_start_price($id);
+			if($desc[0]['default_imgid'] != 0){
+				$image_det=$this->dbase->get_Image_Details($desc[0]['default_imgid']);
+				$image_det=get_object_vars($image_det[0]);
+			}
+			else{
+				$image_det = array('path' => '', 'alt' => 'No Image');
+			}
+			$desc[0]['image']=$image_det;
 			array_push($result_details, $desc[0]);
 		}
 		$data['searchInfo']=$searchInfo;

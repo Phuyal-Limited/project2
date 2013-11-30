@@ -56,7 +56,7 @@
 									<?php foreach ($result as $aResult) { $url=base_url('details')."/".$aResult['hotel_id']; ?>
 										<div class="row result"> <!-- starts:hotel search row -->
 												<div class="col-md-2">
-													<a href="<?php echo $url;?>"><img src="<?php echo base_url('assets/images/owner.jpg'); ?>"></a>
+													<a href="<?php echo $url;?>"><img src="<?php echo $aResult['image']['path']; ?>" alt="<?php echo $aResult['image']['alt']; ?>"></a>
 												</div>
 												<div class="col-md-10">
 													<div class="hotel-desc">
