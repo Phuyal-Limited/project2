@@ -170,10 +170,14 @@ class Rooms extends CI_Model{
 		$result = array();
 		foreach ($hotelIDs as $aHotelID) {
 			$number_available=$this->get_number_of_available_rooms($aHotelID,$fromDate,$toDate);
+			$validHotel=array();
 			if($number_available>0){
-				
+				$validHotel['id']=$aHotelID;
+				$validHotel['number']=$number_available;
+				array_push($result, $validHotel);
 			}
 		}
+		return $result;
 	}
 
 	

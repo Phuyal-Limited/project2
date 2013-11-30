@@ -5,6 +5,7 @@
 			<div class="col-md-3 col-sm-3 col-xs-12">
 				<div class='filter'> <!-- starts:filter -->
 					Filter Result
+					<pre><?php print_r($result) ?></pre>
 				</div><!-- ends:filter -->
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-12">
@@ -24,7 +25,7 @@
 							</div>
 							<div class="col-md-12">
 								<div class="result-details">
-									<p><span>5 Results </span>for <?php echo $searchInfo['checkInDate']; ?> to <?php echo $searchInfo['checkOutDate']; ?> at <?php echo $searchInfo['city']; ?> </p>
+									<p><span><?php echo count($result); ?> Results </span>for <?php echo $searchInfo['checkInDate']; ?> to <?php echo $searchInfo['checkOutDate']; ?> at <?php echo $searchInfo['city']; ?> </p>
 								</div>
 							</div>
 							<div class="col-md-12"> <!-- starts:sort and per page -->
@@ -52,110 +53,40 @@
 							<div class="clear"></div>
 							<div class="col-md-12">
 								<div class="results-wrap">
-									<div class="row result"> <!-- starts:hotel search row -->
-											<div class="col-md-2">
-												<img src="<?php echo base_url('assets/images/owner.jpg'); ?>">
-											</div>
-											<div class="col-md-10">
-												<div class="hotel-desc">
-													<div class="row">
-														<div class="col-md-12">
-															<div class="hotel-search-title">
-																<h1><a href="">Hotel Bidur Subedi</a></h1>
-																<p>Lakeside, Pokhara</p>
+									<?php foreach ($result as $aResult) { $url=base_url('details')."/".$aResult['hotel_id']; ?>
+										<div class="row result"> <!-- starts:hotel search row -->
+												<div class="col-md-2">
+													<a href="<?php echo $url;?>"><img src="<?php echo base_url('assets/images/owner.jpg'); ?>"></a>
+												</div>
+												<div class="col-md-10">
+													<div class="hotel-desc">
+														<div class="row">
+															<div class="col-md-12">
+																<div class="hotel-search-title">
+																	<h1><a href="<?php echo $url; ?>"><?php echo $aResult['name'] ?></a></h1>
+																	<p><?php echo $aResult['address'] ?></p>
+																</div>
 															</div>
-														</div>
-														<div class="col-md-9">
-															<div class="short-desc">
-																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-																	Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo,
-																	eget vulputate orci purus ut lorem. In fringilla mi in ligula. <a href="">more</a> </p>
+															<div class="col-md-9">
+																<div class="short-desc">
+																	<p><?php echo $aResult['description'] ?><a href="<?php echo $url; ?>">more</a> </p>
+																</div>
+																<div class="search-review">
+																	<p><span>13</span> Total reviews </p>
+																</div>
 															</div>
-															<div class="search-review">
-																<p><span>13</span> Total reviews </p>
+															<div class="col-md-3">
+																<div class="price-range">
+																	<p><span>Price From: </span> <br /> Nrs 400</p>
+																</div>
+																<a href="<?php echo $url;?>"><button class="btn btn-default inn-button">Book</button></a>
 															</div>
-														</div>
-														<div class="col-md-3">
-															<div class="price-range">
-																<p><span>Price From: </span> <br /> Nrs 400</p>
-															</div>
-															<button class="btn btn-default inn-button">Book</button>
 														</div>
 													</div>
 												</div>
-											</div>
-									</div>  <!-- ends:hotel search row -->
-									<div class="clear"></div>
-
-									<div class="row result"> <!-- starts:hotel search row -->
-											<div class="col-md-2">
-												<img src="<?php echo base_url('assets/images/owner.jpg'); ?>">
-											</div>
-											<div class="col-md-10">
-												<div class="hotel-desc">
-													<div class="row">
-														<div class="col-md-12">
-															<div class="hotel-search-title">
-																<h1><a href="">Hotel Bidur Subedi</a></h1>
-																<p>Lakeside, Pokhara</p>
-															</div>
-														</div>
-														<div class="col-md-9">
-															<div class="short-desc">
-																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-																	Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo,
-																	eget vulputate orci purus ut lorem. In fringilla mi in ligula. <a href="">more</a> </p>
-															</div>
-															<div class="search-review">
-																<p><span>13</span> Total reviews </p>
-															</div>
-														</div>
-														<div class="col-md-3">
-															<div class="price-range">
-																<p><span>Price From: </span> <br /> Nrs 400</p>
-															</div>
-															<button class="btn btn-default inn-button">Book</button>
-														</div>
-													</div>
-												</div>
-											</div>
-									</div>  <!-- ends:hotel search row -->
-									<div class="clear"></div>
-
-									<div class="row result"> <!-- starts:hotel search row -->
-											<div class="col-md-2">
-												<img src="<?php echo base_url('assets/images/owner.jpg'); ?>">
-											</div>
-											<div class="col-md-10">
-												<div class="hotel-desc">
-													<div class="row">
-														<div class="col-md-12">
-															<div class="hotel-search-title">
-																<h1><a href="">Hotel Bidur Subedi</a></h1>
-																<p>Lakeside, Pokhara</p>
-															</div>
-														</div>
-														<div class="col-md-9">
-															<div class="short-desc">
-																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-																	Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo,
-																	eget vulputate orci purus ut lorem. In fringilla mi in ligula. <a href="">more</a> </p>
-															</div>
-															<div class="search-review">
-																<p><span>13</span> Total reviews </p>
-															</div>
-														</div>
-														<div class="col-md-3">
-															<div class="price-range">
-																<p><span>Price From: </span> <br /> Nrs 400</p>
-															</div>
-															<button class="btn btn-default inn-button">Book</button>
-														</div>
-													</div>
-												</div>
-											</div>
-									</div>  <!-- ends:hotel search row -->
-									<div class="clear"></div>
+										</div>  <!-- ends:hotel search row -->
+										<div class="clear"></div>
+									<?php } ?>
 								</div>
 							</div>
 

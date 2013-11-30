@@ -16,13 +16,25 @@ class Nepalinn extends CI_Controller {
 	public function result()
 	{
 		$data['title'] = 'Nepalinn | Search Result';
+		$this->load->helper('text');
 		if($this->input->post()){
 			$this->_update_session($this->input->post());
 		}
 		else if(!($this->session->userdata('searchInfo'))){
 			redirect('index');
 		}
-		$data['searchInfo']=$this->session->userdata('searchInfo');
+		$searchInfo=$this->session->userdata('searchInfo');
+		$result=$this->rooms->get_available_hotels($searchInfo['city'],$searchInfo['checkInDate'],$searchInfo['checkOutDate']);
+		$result_details = array();
+		foreach ($result as $aResult) {
+			$id=$aResult['id'];
+			$desc=$this->booking->get_hotel_details($id);
+			$desc[0] = get_object_vars($desc[0]);
+			$desc[0]['description']=word_limiter($desc[0]['description'],28);
+			array_push($result_details, $desc[0]);
+		}
+		$data['searchInfo']=$searchInfo;
+		$data['result']=$result_details;
 		$this->load->view('header', $data);
 		$this->load->view('result', $data);
 		$this->load->view('footer');
@@ -44,7 +56,7 @@ class Nepalinn extends CI_Controller {
 	}
 
 	public function test(){
-		$available=$this->rooms->get_available_hotels("pokhara","2013-11-30","2013-12-5");
+		$available=$this->booking->get_hotel_details(1);
 		echo $this->rooms->get_number_of_available_rooms(1,"2013-11-30","2013-12-5");
 		echo "<pre>";
 		print_r($available);
