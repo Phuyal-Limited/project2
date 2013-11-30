@@ -306,8 +306,11 @@ label span{
 }
 
 .room-row-wrap{
-	border-top: 1px solid #c7c7c7;
+	border-top: 2px solid #c7c7c7;
 	padding-top: 10px;
+}
+.room-row-wrap p{
+	padding-left: 20px;
 }
 
 .room-display{
@@ -333,17 +336,19 @@ label span{
 }
 
 .cus-details{
-	border: 1px solid #ed6f58;
+	border: 2px solid #c7c7c7;
 }
 
 .colored-head{
-	background-color: #ed6f58;
+	/*background-color: #ed6f58;*/
+	border-bottom: 2px solid #c7c7c7;
 }
 
 .colored-head h1{
-	color:#fff;
+	color:#2687BD;
 	margin:0px;
 	padding: 10px;
+	border: none;
 }
 
 .detail-content{
@@ -361,4 +366,27 @@ label span{
 	border-radius: 5px;
 	background-color: #F5CFC8;
 	color: #ed6f58;
+}
+
+.hotel-name h1{
+	color: #2687BD;
+	font-size: 15px;
+	border: none;
+	margin:0;
+}
+
+.room-table-content{
+	color: #0c5c88;
+	font-size: 14px;
+}
+
+.booking-totals{
+	text-align: right;
+	border-top: 1px solid #c7c7c7;
+}
+
+.booking-totals span{
+	color: #ed6f58;
+	font-size: 14px;
+	font-weight: bold;
 }
