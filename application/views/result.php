@@ -77,7 +77,7 @@
 															</div>
 															<div class="col-md-3">
 																<div class="price-range">
-																	<p><span>Price From: </span> <br /> Nrs 400</p>
+																	<p><span>Price From: </span> <br /> Nrs <?php echo $aResult['rate']; ?></p>
 																</div>
 																<a href="<?php echo $url;?>"><button class="btn btn-default inn-button">Book</button></a>
 															</div>

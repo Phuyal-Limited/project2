@@ -184,7 +184,7 @@ class Rooms extends CI_Model{
 	/*Function to return number of rooms available in a hotel
 	  takes hotelID and range of dates as parameters
 	  return an array of hotel ID's and number of rooms available which have rooms available
-	  Bu: Bidur Subedi
+	  By: Bidur Subedi
 	  Nov 30, 2013 */
 	public function  get_number_of_available_rooms($hotelID,$fromDate,$toDate){
 		$available = $this->get_available_rooms($hotelID,$fromDate,$toDate);
@@ -194,6 +194,24 @@ class Rooms extends CI_Model{
 			$count+=count($rooms);
 		}
 		return $count;
+	}
+
+	
+	/*Function to return the starting room price of a hotel
+	  takes HotelID as argument
+	  return starting price
+	  By: Bidur Subedi
+	  Nov 30, 2013 */
+	public function get_start_price($hotelID)
+	{
+		$this->db->select('rate');
+		$this->db->where('hotel_id',$hotelID);
+		$this->db->order_by('rate','asc');
+		$this->db->limit(1);
+		$rate=$this->db->get('room_templates/standards');
+		$rate=$rate->result();
+		$rate=get_object_vars($rate[0]);
+		return $rate['rate'];
 	}
 }
 ?>

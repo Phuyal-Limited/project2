@@ -31,6 +31,7 @@ class Nepalinn extends CI_Controller {
 			$desc=$this->booking->get_hotel_details($id);
 			$desc[0] = get_object_vars($desc[0]);
 			$desc[0]['description']=word_limiter($desc[0]['description'],28);
+			$desc[0]['rate']=$this->rooms->get_start_price($id);
 			array_push($result_details, $desc[0]);
 		}
 		$data['searchInfo']=$searchInfo;
@@ -56,9 +57,8 @@ class Nepalinn extends CI_Controller {
 	}
 
 	public function test(){
-		$available=$this->booking->get_hotel_details(1);
-		echo $this->rooms->get_number_of_available_rooms(1,"2013-11-30","2013-12-5");
+		$available=$this->rooms->get_start_price(1);
 		echo "<pre>";
-		print_r($available);
+		echo ($available);
 	}
 }
