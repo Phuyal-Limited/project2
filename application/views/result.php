@@ -19,12 +19,12 @@
 						<div class="main-sarch-content">
 							<div class="col-md-12">
 								<div class="hotel-place">
-									<h1>Hotels In Pokhara</h1>
+									<h1>Hotels In <?php echo $searchInfo['city']; ?></h1>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="result-details">
-									<p><span>5 Results </span>for 2 Jan 2013 to 8 Jan 2013 at pokhara </p>
+									<p><span>5 Results </span>for <?php echo $searchInfo['checkInDate']; ?> to <?php echo $searchInfo['checkOutDate']; ?> at <?php echo $searchInfo['city']; ?> </p>
 								</div>
 							</div>
 							<div class="col-md-12"> <!-- starts:sort and per page -->

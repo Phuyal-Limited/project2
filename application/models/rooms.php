@@ -2,16 +2,6 @@
 
 class Rooms extends CI_Model{
 
-	/*Function to change password of given user
-	  User ID and new passwoed should be provided
-	  Does not check for any validity
-	  By: Bidur Subedi
-	  Nov 24, 2013 */
-	public function change_password($id,$credentials){
-		$this->db->where('user_id',$id);
-		$this->db->update('user',$credentials);
-	}
-
 	/*Function to obtain the status of room
 	  Room ID and the date  to check status should be supplied
 	  By: Bidur Subedi
@@ -161,6 +151,45 @@ class Rooms extends CI_Model{
 			}
 		}
 		return $validRooms;
+	}
+
+	/*Function to return list of hotel ID's which have room available
+	  takes City name and range of dates as parameters
+	  return an array of hotel ID's and number of rooms available which have rooms available
+	  Bu: Bidur Subedi
+	  Nov 30, 2013 */
+	public function  get_available_hotels($city,$fromDate,$toDate){
+		$this->db->select('hotel_id');
+		$this->db->like('city',$city);
+		$hotels=$this->db->get('hotel');
+		$hotels=$hotels->result();
+		$hotelIDs = array();
+		foreach ($hotels as $aHotel) {
+			array_push($hotelIDs, $aHotel->hotel_id);
+		}
+		$result = array();
+		foreach ($hotelIDs as $aHotelID) {
+			$number_available=$this->get_number_of_available_rooms($aHotelID,$fromDate,$toDate);
+			if($number_available>0){
+				
+			}
+		}
+	}
+
+	
+	/*Function to return number of rooms available in a hotel
+	  takes hotelID and range of dates as parameters
+	  return an array of hotel ID's and number of rooms available which have rooms available
+	  Bu: Bidur Subedi
+	  Nov 30, 2013 */
+	public function  get_number_of_available_rooms($hotelID,$fromDate,$toDate){
+		$available = $this->get_available_rooms($hotelID,$fromDate,$toDate);
+		$count=0;
+		foreach ($available as $aStandard) {
+			$rooms=$aStandard['rooms'];
+			$count+=count($rooms);
+		}
+		return $count;
 	}
 }
 ?>
