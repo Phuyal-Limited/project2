@@ -58,6 +58,14 @@ class Nepalinn extends CI_Controller {
 
 	public function details()
 	{
+		$hotel_id = $this->uri->segment(2);
+		$searchInfo=$this->session->userdata('searchInfo');
+
+		$data['checkInDate'] = $searchInfo['checkInDate'];
+		$data['checkOutDate'] = $searchInfo['checkOutDate'];
+
+		$data['hotel_facilities'] = $this->booking->get_hotel_facilities($hotel_id);
+		$data['available_rooms'] = $this->rooms->get_available_rooms($hotel_id, $searchInfo['checkInDate'], $searchInfo['checkOutDate']);
 		$data['title'] = 'Nepalinn | Search Result';
 		$this->load->view('header', $data);
 		$this->load->view('details');
