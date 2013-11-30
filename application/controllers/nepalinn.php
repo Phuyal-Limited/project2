@@ -66,6 +66,7 @@ class Nepalinn extends CI_Controller {
 
 		$data['hotel_facilities'] = $this->booking->get_hotel_facilities($hotel_id);
 		$data['available_rooms'] = $this->rooms->get_available_rooms($hotel_id, $searchInfo['checkInDate'], $searchInfo['checkOutDate']);
+		$data['hotel_id'] = $hotel_id;
 		$data['title'] = 'Nepalinn | Search Result';
 		$this->load->view('header', $data);
 		$this->load->view('details');
@@ -80,9 +81,22 @@ class Nepalinn extends CI_Controller {
 
 	public function checkout()
 	{
-		$data['title'] = 'Nepalinn | Checkout';
-		$this->load->view('header', $data);
-		$this->load->view('checkout');
-		$this->load->view('footer');
+		if($this->input->post('submit')==false){
+			redirect('home');
+		}else{
+			$data['title'] = 'Nepalinn | Checkout';
+
+			$searchInfo=$this->session->userdata('searchInfo');
+			$data['checkInDate'] = $searchInfo['checkInDate'];
+			$data['checkOutDate'] = $searchInfo['checkOutDate'];
+			
+			$hotel_id = $this->input->post('hotel_id');
+			$room_ids = $this->input->post('room_id');
+			$data['checkout_details'] = $this->dbase->get_Template_Room_Details($room_ids);
+
+			$this->load->view('header', $data);
+			$this->load->view('checkout');
+			$this->load->view('footer');
+		}
 	}
 }

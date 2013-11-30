@@ -23,6 +23,44 @@ class Dbase extends CI_Model{
 		return $details;
 	}
 
+	//get template details and room details with room id
+	public function get_Template_Room_Details($room_id){
+		$ids = explode(",", $room_id);
+		$room_details = array();
+		$template_details = array();
+		$template_id_list = array();
+		for ($i=0; $i <sizeof($ids) ; $i++) { 
+			$this->db->where('room_id', $ids[$i]);
+			$details = $this->db->get('room');
+			$details = $details->result();
+			array_push($room_details, get_object_vars($details[0]));
+		}
+		
+		foreach ($room_details as $value) {
+			$template_id = $value['template_id'];
+			array_push($template_id_list, $template_id);
+			$this->db->where('template_id', $template_id);
+			$details = $this->db->get('room_templates/standards');
+			$details = $details->result();
+			array_push($template_details, get_object_vars($details[0]));
+		}
+		$vals = array_count_values($template_id_list);
+		$get_Details = array();
+		$checkout_details = array();
+		foreach ($vals as $key => $value) {
+			foreach ($template_details as $eachTemplate) {
+				if($key == $eachTemplate['template_id']){
+					$get_Details['template_name'] = $eachTemplate['name'];
+					$get_Details['no_of_rooms'] = $value;
+					$get_Details['rate'] = $eachTemplate['rate']; 
+					array_push($checkout_details, $get_Details);
+					break;
+				}
+			}
+		}
+
+		return $checkout_details;
+	}
 
 }
 

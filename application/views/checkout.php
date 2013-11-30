@@ -41,33 +41,44 @@
 											</div>
 										</div>
 									</div> <!-- starts:room-head -->
-
+									
 									<div class="row room-table-content">  <!-- starts:room-row -->
+										<?php 
+											$size = sizeof($checkout_details);
+											$sum = 0;
+											for($i=0;$i<$size;$i++){
+												$total = $checkout_details[$i]['no_of_rooms'] * $checkout_details[$i]['rate'];
+												$sum += $total;
+										?>
 										<div class="col-md-12">
 											<div class="room-row-wrap">
 												<div class="col-md-6 col-xs-4">
 													<div class="room-type">
-														Delux Room
+														<?php echo $checkout_details[$i]['template_name'];?>
 													</div>
 												</div>
 												<div class="col-md-2 col-xs-2">
-													<p>3</p>
+													<p><?php echo $checkout_details[$i]['no_of_rooms'];?></p>
 												</div>
 												<div class="col-md-2 col-xs-3">
-													NRs. 121.23
+													NRs. <?php echo $checkout_details[$i]['rate']; ?>
 												</div>
 												<div class="col-md-2 col-xs-3">
-													NRs. 1212.23
+													NRs. <?php echo $total;?>
 												</div>
 											</div>
 										</div>
+										<?php
+											}
+											$booking_deposite = $sum * 0.2;
+										?>
 										<div class="clear-big"></div>
 										<div class="col-md-12">
 											<div class="booking-totals">
 												<p>No. Of Days: <span>5</span> </p>
-												<p>Grand Total: <span>NRs 1212.32</span> </p>
+												<p>Grand Total: <span>NRs <?php echo $sum;?></span> </p>
 												<div class="booking-fee">
-													<p>Booking Deposite (20% of Grand Total): <span>NRs 121.23</span></p>
+													<p>Booking Deposite (20% of Grand Total): <span>NRs <?php echo $booking_deposite;?></span></p>
 												</div>
 											</div>
 										</div>
