@@ -192,9 +192,11 @@
 						<form method="post" action="<?php echo base_url();?>checkout">
 							<div class="col-md-12">
 								<div class="availability-btn">
+									<span id="room_msg"></span><br/>
 									<input type="hidden" name="room_id" id="room_id" />
 									<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id;?>"/>
-									<input type="submit" name="submit" value="Book Now" class="btn btn-default inn-button hor-form-btn">
+									<input type="button" name="submit" value="Book Now" onclick="return validate_submit();" class="btn btn-default inn-button hor-form-btn">
+									<input type="submit" name="submit" value="Book Now" id="book_now" style="display:none;" class="btn btn-default inn-button hor-form-btn">
 								</div>
 							</div>
 						</form>

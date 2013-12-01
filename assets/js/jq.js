@@ -56,18 +56,37 @@ function select_room(i, j){
 
 
 function get_hash(){
-
+	var hotel_id = $("#hotel_id").val();
 	var amount = $("#amount").val();
 	var orderDesc = $("#orderdescription").val();
 	var customerName = $("#CustomerName").val();
-	
+	var email = $("#email").val();
+	var country = $("#country").val();
+	var address = $("#address").val();
+	var phone = $("#phone").val();
+	var passport = $("#passport").val();
+	var remarks = $("#remarks").val();
+	var pickup_place = $("#pickup_place").val();
+	var pickup_time = $("#pickup_time").val();
+	var pickup_req = $("#pickup_req").val();
+
 	$.ajax({
 		url: 'calculate_hash',
 		type: 'post',
 		data: {
 			amount: amount,
 			orderDesc: orderDesc,
-			customerName: customerName
+			customerName: customerName,
+			email: email,
+			country: country,
+			address: address,
+			phone: phone,
+			passport: passport,
+			remarks: remarks,
+			pickup_place: pickup_place,
+			pickup_time: pickup_time,
+			hotel_id: hotel_id,
+			pickup_req: pickup_req
 		},
 		success: function(response){
 			
@@ -78,4 +97,17 @@ function get_hash(){
 		}
 	});
 	return false;
+}
+
+//validate if the user selected any room
+function validate_submit(){
+	var room_id = $("#room_id").val();
+	if(room_id==''){
+		$("#room_msg").html('No rooms selected.');
+		return false;
+	}else{
+		$("#book_now").click();
+		return true;
+	}
+
 }

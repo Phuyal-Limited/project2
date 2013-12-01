@@ -1,4 +1,5 @@
-<div class="clear"></div>
+<input type="hidden" id="hotel_id">
+div class="clear"></div>
 <div class="content"> <!-- starts:content -->
 	<div class="container"><!-- starts:container -->
 		<div class="row">
@@ -137,7 +138,7 @@
 												<label>E-Mail Address:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<input class='form-control' type="email" placeholder="Address Here" name="email" required>
+												<input class='form-control' type="email" id="email" placeholder="Address Here" name="email" required>
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
@@ -147,7 +148,7 @@
 												<label>Country:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<select class='form-control' name='country'>
+												<select class='form-control' id="country" name='country'>
 													<option value="United States">United States</option> 
 													<option value="United Kingdom">United Kingdom</option> 
 													<option value="Afghanistan">Afghanistan</option> 
@@ -398,7 +399,7 @@
 												<label>Address:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<input class='form-control' type="text" placeholder="Address Here" name="address" required>
+												<input class='form-control' type="text" id="address" placeholder="Address Here" name="address" required>
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
@@ -407,7 +408,7 @@
 												<label>Phone Number:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<input class='form-control' type="text" placeholder="Phone Number" name="phone" required>
+												<input class='form-control' type="text" id="phone" placeholder="Phone Number" name="phone" required>
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
@@ -416,7 +417,7 @@
 												<label>Passport Number:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<input class='form-control' type="text" placeholder="For Non Nepalese Guest" name="pasport">
+												<input class='form-control' type="text" id="passport" placeholder="For Non Nepalese Guest" name="pasport">
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
@@ -425,18 +426,18 @@
 												<label>Remarks:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<input class='form-control' type="text" placeholder="Any instruction or message for the hotel." name="remarks">
+												<input class='form-control' type="text" id="remarks" placeholder="Any instruction or message for the hotel." name="remarks">
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
-										<label><input type="checkbox"><span>I would like the hotel to pick me up when I arrive</span></label> <br />
+										<label><input type="checkbox" name="pickup_req" id="pickup_req" value="1"><span>I would like the hotel to pick me up when I arrive</span></label> <br />
 										<div class="clear"></div> <!-- clears some field below form-row -->
 										<div class="row">
 											<div class="col-md-3 col-sm-4 col-xs-4">
 												<label>Pickup Place:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<select class='form-control' name='pickup_place'>
+												<select class='form-control' id="pickup_place" name='pickup_place'>
 													<option value="Prithvi Chowk">Prithvi Chowk</option> 
 													<option value="Tourist Buspark">Tourist Buspark</option> 
 													<option value="Airport">Airport</option> 
@@ -449,7 +450,7 @@
 												<label>Pickup Time:</label>
 											</div>
 											<div class="col-md-6 col-sm-6 col-xs-8">
-												<input class='form-control' type="time" placeholder="Time of pickup" name="pickup_time">
+												<input class='form-control' type="time" id="pickup_time" placeholder="Time of pickup" name="pickup_time">
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->

@@ -6,11 +6,15 @@ class Nepalinn extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Nepalinn | Home';
-		$data['today'] = date('Y-m-d');
-		$data['tomorrow'] = date('Y-m-d', time()+86400);
+		$data['today'] = date('m/d/Y');
+		$data['tomorrow'] = date('m/d/Y', time()+86400);
 		$this->load->view('header', $data);
 		$this->load->view('home',$data);
 		$this->load->view('footer');
+	}
+
+	public function home(){
+		$this->index();
 	}
 
 	public function thank_you()
@@ -128,6 +132,29 @@ class Nepalinn extends CI_Controller {
 			$amount = $_POST['amount'];
 			$orderDesc = $_POST['orderDesc'];
 			$custName = $_POST['customerName'];
+			$searchInfo=$this->session->userdata('searchInfo');
+			$guest = array(
+				'name' => $custName,
+				'email' => $_POST['email'],
+				'country' => $_POST['country'],
+				'address' => $_POST['address'],
+				'phone' => $_POST['phone'],
+				'passport_no' => $_POST['passport']
+			);
+
+			$booking = array(
+				'hotel_id' => $_POST['hotel_id'],
+				'checkin_date' => $searchInfo['checkInDate'],
+				'checkout_date' => $searchInfo['checkOutDate'],
+				'pickup_req' => $_POST['pickup_req'],
+				'pickup_place' => $_POST['pickup_place'],
+				'pickup_time' => $_POST['pickup_time'],
+				'status' => '1',
+				'remarks' => $_POST['remarks'],
+				'booking_source' => '1'
+			);
+			$this->session->set_userdata('guest',$guest);
+			$this->session->set_userdata('booking',$booking);
 			$dateTime = date('Y-m-d H:i:s P');
 			$hash_digest = $this->_hash_calculator($amount, $orderDesc, $custName, $dateTime);
 			echo $hash_digest.'/'.$dateTime;exit();
@@ -162,6 +189,7 @@ class Nepalinn extends CI_Controller {
 				$total += $details['total'];
 
 			$data['total']=$total;
+			$data['hotel_id']=$hotel_id;
 			$data['grand_tot']=$total * $data['noOfDays'];
 			$data['deposit'] = 0.2 * $data['grand_tot'];
 			$data['deposit_pound'] = $data['deposit'];
