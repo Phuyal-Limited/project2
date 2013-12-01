@@ -104,6 +104,11 @@ class Nepalinn extends CI_Controller {
 		print_r ($available);
 	}
 
+	public function _hash_calculator($amount,$orderDesc,$custName,$dateTime){
+		require_once('_hash_calculator.php');
+		return szHashDigest;
+	}
+
 	public function checkout()
 	{
 		if($this->input->post('submit')==false){
@@ -127,6 +132,7 @@ class Nepalinn extends CI_Controller {
 			$data['total']=$total;
 			$data['grand_tot']=$total * $data['noOfDays'];
 			$data['deposit'] = 0.2 * $data['grand_tot'];
+			$data['deposit_pound'] = 0.61 * $data['deposit'];
 			$this->load->view('header', $data);
 			$this->load->view('checkout');
 			$this->load->view('footer');

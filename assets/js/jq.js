@@ -53,3 +53,10 @@ function select_room(i, j){
 	}
 	return false;
 }
+
+//Sends guest info and obtains transaction Hash
+function get_hash(){
+	alert "here";
+	alert $("#CustomerName").val();
+	return false;
+}
