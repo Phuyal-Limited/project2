@@ -187,7 +187,9 @@ class Booking extends CI_Model{
 	  Dec 01, 2013
 	  */
 	public function add_booking($book_det,$rooms){
+		//$this->db->_compile_select(); 
 		$this->db->insert('booking',$book_det);
+		echo $this->db->last_query(); die();
 		$this->db->select('booking_id');
 		$this->db->order_by('booking_id','desc');
 		$this->db->limit(1);
