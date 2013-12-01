@@ -13,6 +13,22 @@ class Nepalinn extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function thank_you()
+	{
+		$data['title'] = 'Nepalinn | Thank You';
+		$this->load->view('header', $data);
+		$this->load->view('thank_you',$data);
+		$this->load->view('footer');
+	}
+
+	public function error()
+	{
+		$data['title'] = 'Nepalinn | Error In Payment';
+		$this->load->view('header', $data);
+		$this->load->view('error',$data);
+		$this->load->view('footer');
+	}
+
 	public function result()
 	{
 		$data['title'] = 'Nepalinn | Search Result';
