@@ -19,15 +19,36 @@ class Nepalinn extends CI_Controller {
 
 	public function thank_you()
 	{
+		
 		$data['title'] = 'Nepalinn | Thank You';
 		$this->load->view('header', $data);
-		$this->load->view('thank_you',$data);
+		if(!(isset($_POST['StatusCode']))){
+			$data['message']='Invalid Navigation';
+			$this->load->view('error',$data);
+		}
+		else if($this->input->post('StatusCode') != 0){
+			$data['message']=$this->input->post('Message');
+			$this->load->view('error',$data);
+		}
+		else{
+			$guest_det=$this->session->userdata('guest');
+			$booking_det=$this->session->userdata('booking');
+			$rooms=$this->session->userdata('rooms');
+			$guest_id=$this->guest->add_guest($guest_det);
+			$booking_det['guest_id']=$guest_id;
+			$booking_id=$thisbooking->add_booking($booking_det,$rooms);
+			$this->load->view('thank_you',$data);
+		}
 		$this->load->view('footer');
 	}
 
 	public function error()
 	{
 		$data['title'] = 'Nepalinn | Error In Payment';
+		if($this->input->post('Message'))
+			$data['message'] = $this->input->post('Message');
+		else
+			$data['message']=5;
 		$this->load->view('header', $data);
 		$this->load->view('error',$data);
 		$this->load->view('footer');
@@ -180,6 +201,9 @@ class Nepalinn extends CI_Controller {
 			$data['noOfDays']=(strtotime($data['checkOutDate'])-strtotime($data['checkInDate']))/86400;
 			$hotel_id = $this->input->post('hotel_id');
 			$room_ids = $this->input->post('room_id');
+			$room_id=$room_ids;
+			$room_id=explode( ",",$room_ids);
+			$this->session->set_userdata('rooms',$room_id);
 			$desc=$this->booking->get_hotel_details($hotel_id);
 			$desc[0] = get_object_vars($desc[0]);
 			$data['hotel_details']=$desc[0];
