@@ -390,3 +390,14 @@ label span{
 	font-size: 14px;
 	font-weight: bold;
 }
+
+
+.error-desc-content{
+	min-height:100px;
+}
+
+.thank-you-content span{
+	color: #ed5c68;
+	font-size: 13px;
+	font-weight: bold;
+}
