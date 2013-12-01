@@ -13,9 +13,8 @@
 						<div class="col-md-12">
 							<div class="checkout-room-details">
 								<div class="hotel-name">
-									<h1>Hotel Bidur Subedi</h1>
-									lakeside, Pokhara
-									<pre><?php print_r($_POST); ?></pre>
+									<h1><?php echo $hotel_details['name']; ?></h1>
+									<?php echo $hotel_details['address']; ?>
 								</div>
 								<div class='clear'></div>
 
@@ -23,7 +22,7 @@
 									<div class="row"> <!-- starts:room-head -->
 										<div class="col-md-6 col-xs-4">
 											<div class="room-display-head">
-												Room Srandard
+												Room Standard
 											</div>
 										</div>
 										<div class="col-md-2 col-xs-2">
@@ -48,8 +47,6 @@
 											$size = sizeof($checkout_details);
 											$sum = 0;
 											for($i=0;$i<$size;$i++){
-												$total = $checkout_details[$i]['no_of_rooms'] * $checkout_details[$i]['rate'];
-												$sum += $total;
 										?>
 										<div class="col-md-12">
 											<div class="room-row-wrap">
@@ -65,21 +62,21 @@
 													NRs. <?php echo $checkout_details[$i]['rate']; ?>
 												</div>
 												<div class="col-md-2 col-xs-3">
-													NRs. <?php echo $total;?>
+													NRs. <?php echo $checkout_details[$i]['total'];?>
 												</div>
 											</div>
 										</div>
 										<?php
 											}
-											$booking_deposite = $sum * 0.2;
 										?>
 										<div class="clear-big"></div>
 										<div class="col-md-12">
 											<div class="booking-totals">
-												<p>No. Of Days: <span>5</span> </p>
-												<p>Grand Total: <span>NRs <?php echo $sum;?></span> </p>
+												<p>Total: <span>NRs. <?php echo $total; ?></span> </p>
+												<p>No. Of Days: <span><?php echo $noOfDays; ?></span> </p>
+												<p>Grand Total: <span>NRs <?php echo $grand_tot; ?></span> </p>
 												<div class="booking-fee">
-													<p>Booking Deposite (20% of Grand Total): <span>NRs <?php echo $booking_deposite;?></span></p>
+													<p>Booking Deposite (20% of Grand Total): <span>NRs <?php echo $deposit;?></span></p>
 												</div>
 											</div>
 										</div>
@@ -153,7 +150,7 @@
 											<label><input type="checkbox"><span>I agree the terms and condition.</span></label> <br />
 											<label><input type="checkbox"><span>Anything!!</span></label>
 											<div class="clear-small"></div>
-											<div class="warning"><span>Total Payable Amount: NRs 1212.12</span></div>
+											<div class="warning"><span>Total Payable Amount: NRs <?php echo $deposit; ?></span></div>
 											<div class="clear-small"></div>
 											<input class="btn btn-detault inn-button" type="submit" value="Confirm Payment">
 										</div>

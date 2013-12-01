@@ -14,7 +14,7 @@
 							<div class="hotel-title">
 								<h1><?php echo $hotelInfo['name']; ?></h1>
 								<p><?php echo $hotelInfo['address']; ?></p>
-								
+								<pre><?php print_r($hotelInfo); ?></pre>
 							</div>
 						</div>
 					</div>
@@ -195,7 +195,7 @@
 								<div class="availability-btn">
 									<input type="hidden" name="room_id" id="room_id" />
 									<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id;?>"/>
-									<input type="submit" name="submit" value="Submit" class="btn btn-default inn-button hor-form-btn">
+									<input type="submit" name="submit" value="Book Now" class="btn btn-default inn-button hor-form-btn">
 								</div>
 							</div>
 						</form>

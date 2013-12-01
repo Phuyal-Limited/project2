@@ -106,18 +106,26 @@ class Nepalinn extends CI_Controller {
 	public function checkout()
 	{
 		if($this->input->post('submit')==false){
-			redirect('home');
+			redirect('index');
 		}else{
 			$data['title'] = 'Nepalinn | Checkout';
-
 			$searchInfo=$this->session->userdata('searchInfo');
 			$data['checkInDate'] = $searchInfo['checkInDate'];
 			$data['checkOutDate'] = $searchInfo['checkOutDate'];
-			
+			$data['noOfDays']=(strtotime($data['checkOutDate'])-strtotime($data['checkInDate']))/86400;
 			$hotel_id = $this->input->post('hotel_id');
 			$room_ids = $this->input->post('room_id');
+			$desc=$this->booking->get_hotel_details($hotel_id);
+			$desc[0] = get_object_vars($desc[0]);
+			$data['hotel_details']=$desc[0];
 			$data['checkout_details'] = $this->dbase->get_Template_Room_Details($room_ids);
+			$total=0;
+			foreach ($data['checkout_details'] as $details)
+				$total += $details['total'];
 
+			$data['total']=$total;
+			$data['grand_tot']=$total * $data['noOfDays'];
+			$data['deposit'] = 0.2 * $data['grand_tot'];
 			$this->load->view('header', $data);
 			$this->load->view('checkout');
 			$this->load->view('footer');

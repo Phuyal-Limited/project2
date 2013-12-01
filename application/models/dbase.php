@@ -52,7 +52,8 @@ class Dbase extends CI_Model{
 				if($key == $eachTemplate['template_id']){
 					$get_Details['template_name'] = $eachTemplate['name'];
 					$get_Details['no_of_rooms'] = $value;
-					$get_Details['rate'] = $eachTemplate['rate']; 
+					$get_Details['rate'] = $eachTemplate['rate'];
+					$get_Details['total'] = $value * $eachTemplate['rate'];
 					array_push($checkout_details, $get_Details);
 					break;
 				}
