@@ -11,7 +11,7 @@
 					</ol> <!-- ends:breadcrumbs -->
 					<div class='row'>
 						<div class="col-md-12">
-							<div class="hotel-title">
+							<div class="hotel-name">
 								<h1><?php echo $hotelInfo['name']; ?></h1>
 								<p><?php echo $hotelInfo['address']; ?></p>
 							</div>

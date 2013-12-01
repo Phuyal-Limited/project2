@@ -85,16 +85,16 @@
 							</div>
 							<div class="clear-big"></div>
 						</div>
-						<form name="Form" action="https://mms.paymentsensegateway.com/Pages/PublicPages/PaymentForm.aspx" method="post" onsubmit="return get_hash()">
-			                  <input type="hidden" name="HashDigest" value="" />
+						<form name="Form" action="https://mms.paymentsensegateway.com/Pages/PublicPages/PaymentForm.aspx" method="post" >
+			                  <input type="hidden" name="HashDigest" id="hash_digest" />
 			                  <input type="hidden" name="MerchantID" value="TESTGe-9778137" />
-			                  <input type="hidden" name="Amount" value="<?php echo $deposit_pound; ?>" />
+			                  <input type="hidden" name="Amount" id="amount" value="<?php echo $deposit_pound; ?>" />
 			                  <input type="hidden" name="CurrencyCode" value="826" />
 			                  <input type="hidden" name="OrderID" value="Hotel Booking Deposit" />
 			                  <input type="hidden" name="TransactionType" value="SALE" />
-			                  <input type="hidden" name="TransactionDateTime" value="" />
+			                  <input type="hidden" name="TransactionDateTime" id="dateTime" value="" />
 			                  <input type="hidden" name="CallbackURL" value="<?php echo base_url('thank_you'); ?>" />
-			                  <input type="hidden" name="OrderDescription" value="<?php echo $hotel_details['name']; ?>" />
+			                  <input type="hidden" name="OrderDescription" id="orderdescription" value="<?php echo $hotel_details['name']; ?>" />
 			                  <input type="hidden" name="Address1" value="" />
 			                  <input type="hidden" name="Address2" value="" />
 			                  <input type="hidden" name="Address3" value="" />
@@ -459,7 +459,8 @@
 												<div class="clear-small"></div>
 												<div class="warning"><span>Total Payable Amount: NRs <?php echo $deposit; ?></span></div>
 												<div class="clear-small"></div>
-												<input class="btn btn-detault inn-button" type="submit" value="Pay Deposit" />
+												<input class="btn btn-detault inn-button" type="button" onclick="return get_hash();" value="Pay Deposit" />
+												<input class="btn btn-detault inn-button" style="display:none;" id="pay" type="submit" value="Pay Deposit" />
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->

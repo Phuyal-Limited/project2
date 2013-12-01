@@ -120,9 +120,25 @@ class Nepalinn extends CI_Controller {
 		print_r ($available);
 	}
 
+	//function to get the hash digest and return to ajax call
+	public function calculate_hash(){
+		if(!isset($_POST['amount'])){
+			redirect('home');
+		}else{
+			$amount = $_POST['amount'];
+			$orderDesc = $_POST['orderDesc'];
+			$custName = $_POST['customerName'];
+			$dateTime = date('Y-m-d H:i:s P');
+			$hash_digest = $this->_hash_calculator($amount, $orderDesc, $custName, $dateTime);
+			echo $hash_digest.'/'.$dateTime;exit();
+		}
+	}
+
+
+
 	public function _hash_calculator($amount,$orderDesc,$custName,$dateTime){
-		require_once('_hash_calculator.php');
-		return szHashDigest;
+		require_once('hash_calculator.php');
+		return $szHashDigest;
 	}
 
 	public function checkout()
@@ -148,7 +164,7 @@ class Nepalinn extends CI_Controller {
 			$data['total']=$total;
 			$data['grand_tot']=$total * $data['noOfDays'];
 			$data['deposit'] = 0.2 * $data['grand_tot'];
-			$data['deposit_pound'] = 0.61 * $data['deposit'];
+			$data['deposit_pound'] = $data['deposit'];
 			$this->load->view('header', $data);
 			$this->load->view('checkout');
 			$this->load->view('footer');

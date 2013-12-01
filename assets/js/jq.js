@@ -1,4 +1,4 @@
-$(document).ready(function(){
+	$(document).ready(function(){
 
 	
 });
@@ -51,5 +51,31 @@ function select_room(i, j){
 		$("#room_id").val(rooms_array);
 		
 	}
+	return false;
+}
+
+
+function get_hash(){
+
+	var amount = $("#amount").val();
+	var orderDesc = $("#orderdescription").val();
+	var customerName = $("#CustomerName").val();
+	
+	$.ajax({
+		url: 'calculate_hash',
+		type: 'post',
+		data: {
+			amount: amount,
+			orderDesc: orderDesc,
+			customerName: customerName
+		},
+		success: function(response){
+			
+			var result = response.split('/');
+			$("#hash_digest").val(result[0]);
+			$("#dateTime").val(result[1]);
+			$("#pay").click();
+		}
+	});
 	return false;
 }

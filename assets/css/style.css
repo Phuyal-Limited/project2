@@ -206,13 +206,14 @@ label span{
 	font-weight: bold;
 	background-color: #444135;
 	color: #ed6f58;
-	border: 1px solid #444135;
+	border: none;
 }
 
 .inn-button:hover,
 .inn-button:focus{
 	color: #ed6f58;
 	background-color: #1D1D1B;
+	border: none;
 }
 
 
