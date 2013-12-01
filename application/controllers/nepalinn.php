@@ -36,7 +36,7 @@ class Nepalinn extends CI_Controller {
 			$rooms=$this->session->userdata('rooms');
 			$guest_id=$this->guest->add_guest($guest_det);
 			$booking_det['guest_id']=$guest_id;
-			$booking_id=$thisbooking->add_booking($booking_det,$rooms);
+			$booking_id=$this->booking->add_booking($booking_det,$rooms);
 			$this->load->view('thank_you',$data);
 		}
 		$this->load->view('footer');
