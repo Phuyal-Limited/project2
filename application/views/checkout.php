@@ -1,4 +1,4 @@
-<input type="hidden" id="hotel_id">
+<input type="hidden" id="hotel_id" value="<?php echo $hotel_id; ?>">
 div class="clear"></div>
 <div class="content"> <!-- starts:content -->
 	<div class="container"><!-- starts:container -->
