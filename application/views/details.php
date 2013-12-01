@@ -14,7 +14,6 @@
 							<div class="hotel-title">
 								<h1><?php echo $hotelInfo['name']; ?></h1>
 								<p><?php echo $hotelInfo['address']; ?></p>
-								<pre><?php print_r($hotelInfo); ?></pre>
 							</div>
 						</div>
 					</div>
