@@ -179,5 +179,30 @@ class Booking extends CI_Model{
 		}
 		return $allRooms;
 	}
+
+	/*Function to add booking details to the booking table of the database]
+	  Takes in a array of booking details and another array of room IDs to book
+	  returns the booking ID
+	  By: Bidur Subedi
+	  Dec 01, 2013
+	  */
+	public function add_booking($book_det,$rooms){
+		$this->db->insert('booking',$book_det);
+		$this->db->select('booking_id');
+		$this->db->order_by('booking_id','desc');
+		$this->db->limit(1);
+		$id=$this->db->get('booking');
+		$id=$id->result();
+		$id=get_object_vars($id[0]);
+		$id=$id['booking_id'];
+		$room=array();
+		//Add record of all room against this booking in the booking_room table
+		foreach ($rooms as $aRoom) {
+			$room['booking_id']=$id;
+			$room['room_id']=$aRoom;
+			$this->db->insert('booking_room',$room);
+		}
+		return $id;
+	}
 }
 ?>

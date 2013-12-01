@@ -98,9 +98,10 @@ class Nepalinn extends CI_Controller {
 	}
 
 	public function test(){
-		$available=$this->rooms->get_start_price(1);
+		$det = array('name' => 'testname', 'email' => 'testemail','country' => 'testcountry','address' => 'testaddr','phone' => 'testphn','passport_no' => '222');
+		$available=$this->guest->add_guest($det);
 		echo "<pre>";
-		echo ($available);
+		print_r ($available);
 	}
 
 	public function checkout()
