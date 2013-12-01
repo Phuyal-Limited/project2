@@ -5,7 +5,6 @@
 			<div class="col-md-3 col-sm-3 col-xs-12">
 				<div class='filter'> <!-- starts:filter -->
 					Filter Result
-					<pre><?php print_r($result) ?></pre>
 				</div><!-- ends:filter -->
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-12">

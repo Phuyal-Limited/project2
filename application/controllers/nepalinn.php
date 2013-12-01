@@ -50,7 +50,13 @@ class Nepalinn extends CI_Controller {
 	}
 
 	private function _update_session($search_info){
-		if($this->session->userdata['searchInfo']){
+		if(!(isset($search_info['city']))){
+			$current_info=$this->session->userdata('searchInfo');
+			$current_info['checkInDate']=$search_info['checkInDate'];
+			$current_info['checkOutDate']=$search_info['checkOutDate'];
+			$search_info=$current_info;
+		}
+		else if($this->session->userdata['searchInfo']){
 			$this->session->unset_userdata('searchInfo');
 		}
 		$this->session->set_userdata('searchInfo',$search_info);
@@ -58,9 +64,27 @@ class Nepalinn extends CI_Controller {
 
 	public function details()
 	{
+		if(!($this->uri->segment(2)))
+			redirect ('index');
+		if($this->input->post('changeDate')){
+			$searchInfo=$this->input->post();
+			$this->_update_session($searchInfo);
+		}
 		$hotel_id = $this->uri->segment(2);
 		$searchInfo=$this->session->userdata('searchInfo');
 
+		$desc=$this->booking->get_hotel_details($hotel_id);
+		$desc[0] = get_object_vars($desc[0]);
+		$desc[0]['rate']=$this->rooms->get_start_price($hotel_id);
+		if($desc[0]['default_imgid'] != 0){
+			$image_det=$this->dbase->get_Image_Details($desc[0]['default_imgid']);
+			$image_det=get_object_vars($image_det[0]);
+		}
+		else{
+			$image_det = array('path' => '', 'alt' => 'No Image');
+		}
+		$desc[0]['image']=$image_det;
+		$data['hotelInfo']=$desc[0];
 		$data['checkInDate'] = $searchInfo['checkInDate'];
 		$data['checkOutDate'] = $searchInfo['checkOutDate'];
 

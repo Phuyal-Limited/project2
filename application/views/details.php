@@ -12,8 +12,9 @@
 					<div class='row'>
 						<div class="col-md-12">
 							<div class="hotel-title">
-								<h1>Hotel Bidur Subedi</h1>
-								<p>lakeside, Pokhara</p>
+								<h1><?php echo $hotelInfo['name']; ?></h1>
+								<p><?php echo $hotelInfo['address']; ?></p>
+								
 							</div>
 						</div>
 					</div>
@@ -30,7 +31,7 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="thumbnail">
-													<img src="<?php echo base_url('assets/images/owner.jpg'); ?>">
+													<img src="<?php echo $hotelInfo['image']['path']; ?>">
 												</div>
 											</div>
 											<div class="col-md-12">
@@ -86,11 +87,7 @@
 										<div class="clear"></div>
 										<div class="row">
 												<div class="col-md-12">
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-														Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-														Mauris eleifend, quam a vulputate dictum, massa quam dapibus leoLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-														Mauris eleifend, quam a vulputate dictum, massa quam dapibus leoLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-														Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo</p>
+													<p><?php echo $hotelInfo['description']; ?></p>
 												</div>
 											</div>
 									</div> <!-- ends:main-section -->
@@ -106,20 +103,20 @@
 								<h1>Aviability and Rates</h1>
 							</div>
 						</div>
-						<div class="col-md-2 col-xs-6 col-sm-3">
-							<label>Check In:</label>
-							<input type="text" class="form-control datepicker" value="<?php echo $checkInDate;?>">
-						</div>
-						<div class="col-md-2 col-xs-6 col-sm-3">
-							<label>Check Out:</label>
-							<input type="text" class="form-control datepicker" value="<?php echo $checkOutDate;?>">
-						</div>
-						<button class="btn btn-default inn-button hor-form-btn">Check</button>
-
+						<form name='change_date' action='' method='POST'>
+							<div class="col-md-2 col-xs-6 col-sm-3">
+								<label>Check In:</label>
+								<input type="text" class="form-control datepicker" value="<?php echo $checkInDate;?>" name="checkInDate">
+							</div>
+							<div class="col-md-2 col-xs-6 col-sm-3">
+								<label>Check Out:</label>
+								<input type="text" class="form-control datepicker" value="<?php echo $checkOutDate;?>" name="checkOutDate">
+							</div>
+							<input type='submit' class="btn btn-default inn-button hor-form-btn" value='Change' name='changeDate' />
+						</form>
 						<div class='col-md-12'>
 							<div class="clear"></div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-								Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo Lorem ipsum dolor sit amet,</p>
+							<p>Please click on the rooms you wish to select.</p>
 						</div>
 					</div> <!--ends:Aviability and rates -->
 					<div class="clear"></div>
@@ -141,9 +138,7 @@
 										</div>
 									</div>
 									<div class='col-md-1 col-xs-3 col-sm-2'>
-										<div class="room-display-head">
-											Guests
-										</div>
+										
 									</div>
 								</div>  <!-- ends:head row -->
 

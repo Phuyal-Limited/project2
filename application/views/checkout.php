@@ -7,7 +7,7 @@
 
 					<div class="row">
 						<div class='col-md-12'>
-							<h1>Payment</h1>
+							<h1>Booking Deposit</h1>
 						</div>
 						<div class="clear"></div>
 						<div class="col-md-12">
@@ -15,6 +15,7 @@
 								<div class="hotel-name">
 									<h1>Hotel Bidur Subedi</h1>
 									lakeside, Pokhara
+									<pre><?php print_r($_POST); ?></pre>
 								</div>
 								<div class='clear'></div>
 
@@ -91,7 +92,7 @@
 						<div class="col-md-12">
 							<div class="cus-details rounded"> <!-- starts:cus details -->
 								<div class="colored-head">
-									<h1>Your Details</h1>
+									<h1>Please Enter Your Details</h1>
 								</div>
 								<div class='detail-content'>
 									<div class="clear"></div>
