@@ -4,7 +4,7 @@
 		<div class="col-md-12">
 			<div class="alert alert-warning">
 				<strong>Error in payment!!</strong> Your Reservation has not been confirmed.
-				
+				<?php print_r($this->session->userdata('booking')); ?>
 			</div>
 
 			<div class="error-desc">

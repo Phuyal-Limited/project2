@@ -5,6 +5,7 @@
 			<div class="alert alert-success">
 				<strong>Congratulation! Your payment was sent.</strong> You have sucessfully paid for this transaction.
 			</div>
+			<?php print_r($this->session->userdata('booking')); ?>
 
 			<div class="thank-you-content">
 	            <pre><?php print_r($_POST); ?></pre>
