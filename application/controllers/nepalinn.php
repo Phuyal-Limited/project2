@@ -6,8 +6,8 @@ class Nepalinn extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = 'Nepalinn | Home';
-		$data['today'] = date('m/d/Y');
-		$data['tomorrow'] = date('m/d/Y', time()+86400);
+		$data['today'] = date('Y-m-d');
+		$data['tomorrow'] = date('Y-m-d', time()+86400);
 		$this->load->view('header', $data);
 		$this->load->view('home',$data);
 		$this->load->view('footer');

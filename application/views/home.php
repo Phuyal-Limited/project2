@@ -30,10 +30,10 @@
 							</div>
 							<div class="col-md-2 col-xs-12 col-sm-6">
 								<label>Check In:</label>
-								<input type="text" placeholder="From" class="form-control datepicker" name="checkInDate" value='<?php echo $today; ?>'></div>
+								<input type="text" placeholder="From" class="form-control datepicker" name="checkInDate" value='<?php echo $today; ?>' required></div>
 							<div class="col-md-2 col-xs-12 col-sm-6">
 								<label>Check Out:</label>
-								<input type="text" placeholder="To" class="form-control datepicker" name="checkOutDate" value='<?php echo $tomorrow; ?>'></div>
+								<input type="text" placeholder="To" class="form-control datepicker" name="checkOutDate" value='<?php echo $tomorrow; ?>' required></div>
 							<div class="col-md-2 col-xs-12 col-sm-12">
 								<input type="submit" value="Search" class="btn btn-default search-btn inn-button"></div>
 						</div>
