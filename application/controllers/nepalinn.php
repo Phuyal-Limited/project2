@@ -13,6 +13,14 @@ class Nepalinn extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function reviews()
+	{
+		$data['title'] = 'Nepalinn | Reviews';
+		$this->load->view('header', $data);
+		$this->load->view('reviews',$data);
+		$this->load->view('footer');
+	}
+
 	public function home(){
 		$this->index();
 	}
