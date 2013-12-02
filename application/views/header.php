@@ -31,14 +31,14 @@
 						      <span class="icon-bar"></span>
 						      <span class="icon-bar"></span>
 						    </button>
-						    <a class="navbar-brand" href="home"><img src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
+						    <a class="navbar-brand" href="<?php echo base_url();?>home"><img src="<?php echo base_url('assets/images/logo.png'); ?>"></a>
 						  </div>
 
 						  <!-- Collect the nav links, forms, and other content for toggling -->
 						  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						    <div class="inn-nav">
 						    	<ul class="nav navbar-nav navbar-right">
-							      <li><a href="#">Home</a></li>
+							      <li><a href="<?php echo base_url(); ?>home">Home</a></li>
 							      <li><a href="#">About</a></li>
 							      <li><a href="#">Contact</a></li>
 							      <li><a href="#">Ipsum</a></li>

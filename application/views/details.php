@@ -5,7 +5,7 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="result-content"> <!-- starts:detail content -->
 					<ol class="breadcrumb"> <!-- starts:breadcrumbs -->
-					  <li><a href="#">Home</a></li>
+					  <li><a href="<?php echo base_url(); ?>home">Home</a></li>
 					  <li><a href="#">Library</a></li>
 					  <li class="active">Data</li>
 					</ol> <!-- ends:breadcrumbs -->
@@ -189,17 +189,19 @@
 							</div><!-- ends:table-wrap -->
 						</div>
 
-						<form method="post" action="<?php echo base_url();?>checkout">
-							<div class="col-md-12">
-								<div class="availability-btn">
-									<span id="room_msg"></span><br/>
-									<input type="hidden" name="room_id" id="room_id" />
-									<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id;?>"/>
-									<input type="button" name="submit" value="Book Now" onclick="return validate_submit();" class="btn btn-default inn-button hor-form-btn">
-									<input type="submit" name="submit" value="Book Now" id="book_now" style="display:none;" class="btn btn-default inn-button hor-form-btn">
+						<div style="display:none;" id="submit-form">
+							<form method="post" action="<?php echo base_url();?>checkout">
+								<div class="col-md-12">
+									<div class="availability-btn">
+										<span id="room_msg"></span><br/>
+										<input type="hidden" name="room_id" id="room_id" />
+										<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id;?>"/>
+										<input type="button" name="submit" value="Book Now" onclick="return validate_submit();" class="btn btn-default inn-button hor-form-btn">
+										<input type="submit" name="submit" value="Book Now" id="book_now" style="display:none;" class="btn btn-default inn-button hor-form-btn">
+									</div>
 								</div>
-							</div>
-						</form>
+							</form>
+						</div>
 					</div><!--ends:Aviability table -->
 					<div class="clear"></div>
 

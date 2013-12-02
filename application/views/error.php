@@ -19,7 +19,7 @@
 						the payment gateway. The message from payment gateway: <?php echo $message; ?></p>
 				</div>
 				<div class="clear"></div>
-				<a href=<?php echo base_url(); ?>><button class="btn btn-default inn-button">Back</button></a>
+				<a href="<?php echo base_url(); ?>"><button class="btn btn-default inn-button">Back</button></a>
 			</div>
 		</div>
 	</div> <!-- starts:container -->

@@ -1,10 +1,53 @@
 $(document).ready(function(){
   
 	//display to choose pickup time and place when pickup request clicked
-  $("#pickup_req").click(function(){
+  	$("#pickup_req").click(function(){
 		$("#pickup-place-details").toggle(1000);
 		$("#pickup-time-details").toggle(1000);
 		return false;
+	});
+		
+  	//to check if the user tries to click the checkout date before checkin date
+	$("#pick2").change(function(){
+		var from = $("#pick1").val();
+		var to = $("#pick2").val();
+		if(to==''){
+	   		$("#pick2").val('');
+		}else if(to<from ){
+			var date2 = $('#pick1').datepicker('getDate');
+            date2.setDate(date2.getDate()+1);
+            $('#pick2').datepicker('setDate', date2);
+ 		}else if(to==from){
+  			var date2 = $('#pick1').datepicker('getDate');
+            date2.setDate(date2.getDate()+1);
+            $('#pick2').datepicker('setDate', date2);
+ 		}else{
+ 			//nothing
+ 		}
+ 		return false;
+	});
+
+
+	$("#pick1").change(function(){
+		var from = $("#pick1").val();
+ 		var to = $("#pick2").val();
+ 		if(to!=''){
+  			if(to<from){
+  				var date2 = $('#pick1').datepicker('getDate');
+            	date2.setDate(date2.getDate()+1);
+            	$('#pick2').datepicker('setDate', date2);
+            	// $('#pick1').datepicker({ 
+            	// 	dateFormat: "yy-mm-dd",
+            	// 	minDate: date2 
+            	// });
+  			}
+  			if(to==from){
+  				var date2 = $('#pick1').datepicker('getDate');
+            	date2.setDate(date2.getDate()+1);
+            	$('#pick2').datepicker('setDate', date2);
+  			}
+		}
+		return false
 	});
 
   //to disable date pick before today
@@ -42,6 +85,14 @@ function select_room(i, j){
 		rooms.splice(roomIndex, 1);
 		
 		$("#room_id").val(rooms);
+
+		var check_room = $("#room_id").val();
+
+		if(check_room==""){
+			$("#submit-form").hide();
+		}else{
+			$("#submit-form").show();
+		}
 	}else{
 		$("#change-color"+i+"-"+j).css( {"background-color": "#1A71AC" , "padding": "3px"} );
 		$('#selected'+i+"-"+j).css({"display": "block"});
@@ -58,6 +109,7 @@ function select_room(i, j){
 		
 		
 		$("#room_id").val(rooms_array);
+		$("#submit-form").show();
 		
 	}
 	return false;
