@@ -105,11 +105,11 @@
 						<form name='change_date' action='' method='POST'>
 							<div class="col-md-2 col-xs-6 col-sm-3">
 								<label>Check In:</label>
-								<input type="text" class="form-control datepicker" value="<?php echo $checkInDate;?>" name="checkInDate">
+								<input type="text" id="pick1" class="form-control datepicker" value="<?php echo $checkInDate;?>" name="checkInDate">
 							</div>
 							<div class="col-md-2 col-xs-6 col-sm-3">
 								<label>Check Out:</label>
-								<input type="text" class="form-control datepicker" value="<?php echo $checkOutDate;?>" name="checkOutDate">
+								<input type="text" id="pick2" class="form-control datepicker" value="<?php echo $checkOutDate;?>" name="checkOutDate">
 							</div>
 							<input type='submit' class="btn btn-default inn-button hor-form-btn" value='Change' name='changeDate' />
 						</form>

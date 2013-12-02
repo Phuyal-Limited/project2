@@ -1,9 +1,16 @@
 $(document).ready(function(){
+  
+	//display to choose pickup time and place when pickup request clicked
   $("#pickup_req").click(function(){
 		$("#pickup-place-details").toggle(1000);
 		$("#pickup-time-details").toggle(1000);
 		return false;
 	});
+
+  //to disable date pick before today
+  $('#pick1').datepicker({ minDate: 0 });
+  //check out date must be atleast a day after the checkin date
+  $('#pick2').datepicker({ minDate: 1 });
 });
 
 //change color of selected room
