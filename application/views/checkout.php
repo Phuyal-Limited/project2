@@ -432,7 +432,7 @@
 										<div class="clear"></div> <!-- clears some field below form-row -->
 										<label><input type="checkbox" name="pickup_req" id="pickup_req" value="1"><span>I would like the hotel to pick me up when I arrive</span></label> <br />
 										<div class="clear"></div> <!-- clears some field below form-row -->
-										<div class="row">
+										<div class="row" id="pickup-place-details">
 											<div class="col-md-3 col-sm-4 col-xs-4">
 												<label>Pickup Place:</label>
 											</div>
@@ -445,7 +445,7 @@
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
-										<div class="row">
+										<div class="row" id="pickup-time-details">
 											<div class="col-md-3 col-sm-4 col-xs-4">
 												<label>Pickup Time:</label>
 											</div>

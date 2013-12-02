@@ -1,8 +1,10 @@
-	$(document).ready(function(){
-
-	
+$(document).ready(function(){
+  $("#pickup_req").click(function(){
+		$("#pickup-place-details").toggle(1000);
+		$("#pickup-time-details").toggle(1000);
+		return false;
+	});
 });
-
 
 //change color of selected room
 function select_room(i, j){
@@ -68,7 +70,11 @@ function get_hash(){
 	var remarks = $("#remarks").val();
 	var pickup_place = $("#pickup_place").val();
 	var pickup_time = $("#pickup_time").val();
-	var pickup_req = $("#pickup_req").val();
+	var pickup_req = 0;
+	if($('#pickup_req').is(':checked')){
+		pickup_req = 1;
+
+	}
 
 	$.ajax({
 		url: 'calculate_hash',

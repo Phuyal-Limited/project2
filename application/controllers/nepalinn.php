@@ -62,7 +62,7 @@ class Nepalinn extends CI_Controller {
 			$this->_update_session($this->input->post());
 		}
 		else if(!($this->session->userdata('searchInfo'))){
-			redirect('index');
+			redirect('home');
 		}
 		$searchInfo=$this->session->userdata('searchInfo');
 		$result=$this->rooms->get_available_hotels($searchInfo['city'],$searchInfo['checkInDate'],$searchInfo['checkOutDate']);
@@ -106,7 +106,7 @@ class Nepalinn extends CI_Controller {
 	public function details()
 	{
 		if(!($this->uri->segment(2)))
-			redirect ('index');
+			redirect ('home');
 		if($this->input->post('changeDate')){
 			$searchInfo=$this->input->post();
 			$this->_update_session($searchInfo);
@@ -192,7 +192,7 @@ class Nepalinn extends CI_Controller {
 	public function checkout()
 	{
 		if($this->input->post('submit')==false){
-			redirect('index');
+			redirect('home');
 		}else{
 			$data['title'] = 'Nepalinn | Checkout';
 			$searchInfo=$this->session->userdata('searchInfo');
