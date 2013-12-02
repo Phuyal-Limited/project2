@@ -4,6 +4,12 @@ html,body{
 	background-color:#fff;
 }
 
+@font-face
+{
+font-family: "fontawesome-webfont";
+src: url('../fonts/fontawesome-webfont.ttf');
+}
+
 img{
 	width:100%;
 	height: auto;
@@ -12,10 +18,14 @@ img{
 h1{
 	color: #ed6f58;
 	text-transform: uppercase;
-	font-size: 15px;
-	font-size: 20px;
+	font-size: 17px;
 	font-weight: bold;
 	border-bottom: 1px solid #ed6f58;
+}
+
+h2{
+	font-size:20px;
+	margin:0;
 }
 
 label{
@@ -325,11 +335,13 @@ label span{
 	margin-bottom: 20px;
 	font-weight: bold;
 	cursor: pointer;
+	height: 40px;
 }
 
 .room-display p{
 	font-size: 11px;
 	margin:0px;
+	padding: 0px;
 }
 
 #color-change{
@@ -401,4 +413,41 @@ label span{
 	color: #ed5c68;
 	font-size: 13px;
 	font-weight: bold;
+}
+
+.rate-and-review{
+	background-color: #F5F5F5;
+	border: 2px solid #c7c7c7;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.rating-percentage{
+	padding-left: 15px;
+	color: #2687BD;
+	font-size: 60px;
+	border-right: 2px dashed #c7c7c7;
+}
+
+.rating-percentage p{
+	font-size: 15px;
+	margin: 0px;
+	margin-top: -15px;
+}
+
+.rating-percentage h2{
+	margin-bottom: -12px;
+}
+
+.rate-list{
+	padding: 6px 25px;
+}
+
+.rate-list span{
+	float:right;
+	font-weight: bold;
+}
+
+.reviews-head{
+	color: #2687BD;
 }
