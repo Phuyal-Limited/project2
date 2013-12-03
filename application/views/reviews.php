@@ -71,6 +71,12 @@
 											</div>
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-md-12" >
+											<button class="btn btn-default" data-toggle="modal" data-target="#rate-modal" style=" margin-left:40px; padding: 2px 12px;">Rate this Inn</button>
+											<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="padding: 2px 12px;">Write a review</button>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -161,16 +167,6 @@
 								</div>
 							</div>
 						</div>
-					</div> <!-- ends:review-row -->
-
-
-					asdfadsf<div id="r1" class="rate_widget">
-        <div class="star_1 ratings_stars"></div>
-        <div class="star_2 ratings_stars"></div>
-        <div class="star_3 ratings_stars"></div>
-        <div class="star_4 ratings_stars"></div>
-        <div class="star_5 ratings_stars"></div>
-    </div>
 
 					
 				</div> <!-- ends:detail content -->

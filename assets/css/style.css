@@ -43,6 +43,12 @@ label span{
 	padding: 0 0 0 15px;
 }
 
+label em{
+	font-size: 22px;
+	line-height: 0;
+}
+
+
 .clear{
 	padding: 10px;
 }
@@ -73,12 +79,16 @@ label span{
     height:     17px;
     padding:    2px;
     width:      18px;
+    width: 15px;
+	background-size: 13px 13px;
 }
 .ratings_vote {
     background: url('../images/star_full.png') no-repeat;
+    background-size: 13px 13px;
 }
 .ratings_over {
     background: url('../images/star_highlight.png') no-repeat;
+    background-size: 13px 13px;
 }
 .total_votes {
     background: #eaeaea;
@@ -248,7 +258,7 @@ label span{
 }
 
 .inn-button{
-	font-size: 14px;
+	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: bold;
 	background-color: #444135;
@@ -535,5 +545,37 @@ label span{
 .review-footer span{
 	font-style: italic;
 }
+
+.rate-stars{
+	float: right;
+}
+
+.modal-header{
+	border-bottom:1px solid #ed5c63;
+}
+
+.modal-header h1{
+	border:none;
+}
+
+.modal-footer{
+	border-top:1px solid #ed5c63;
+}
+
+.form-info{
+	color: #ed6f58;
+}
+
+.contact-details{
+	/*text-align: right;*/
+	font-size: 16px;
+	color: #6F6F6F;
+	font-weight: bold;
+}
+
+.button-right{
+	float: right;
+}
+
 
 

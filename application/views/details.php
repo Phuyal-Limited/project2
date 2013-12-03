@@ -35,16 +35,16 @@
 											</div>
 											<div class="col-md-12">
 												<div class="row">
-													<div class="col-md-3 col-padding col-padding-first">
+													<div class="col-md-3 col-sm-3 col-xs-3 col-padding col-padding-first">
 														<img src="<?php echo base_url("assets/images/owner.jpg"); ?>">
 													</div>
-													<div class="col-md-3 col-padding">
+													<div class="col-md-3 col-sm-3 col-xs-3 col-padding">
 														<img src="<?php echo base_url("assets/images/owner.jpg"); ?>">
 													</div>
-													<div class="col-md-3 col-padding">
+													<div class="col-md-3 col-sm-3 col-xs-3 col-padding">
 														<img src="<?php echo base_url("assets/images/owner.jpg"); ?>">
 													</div>
-													<div class="col-md-3 col-padding col-padding-last">
+													<div class="col-md-3 col-sm-3 col-xs-3 col-padding col-padding-last">
 														<img src="<?php echo base_url("assets/images/owner.jpg"); ?>">
 													</div>
 												</div>
@@ -57,6 +57,7 @@
 												<div class="row">
 													<div class="col-md-12">
 														<div class="total-review">
+															<button class="btn btn-default" data-toggle="modal" data-target="#rate-modal" style="float:right; padding: 2px 12px;">Rate this Inn</button>
 															<p><span>Rating:73%</span> 13 Total Reviews</p>
 														</div>
 													</div>
@@ -74,11 +75,17 @@
 											</div>
 											<div class="col-md-6">
 												<div class="latest-review-head">
+													<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="float:right; padding: 2px 12px;">Write a review</button>
 													<p>Latest Review</p>
 													<div class="one-review">
 														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
 														Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo <a href="">more</a></p>
 														<p><a href="">Read all reviews</a> </p>
+														
+														
+
+
+    
 													</div>
 												</div>
 											</div>
@@ -89,6 +96,13 @@
 													<p><?php echo $hotelInfo['description']; ?></p>
 												</div>
 											</div>
+											<!-- <div class="clear"></div>
+											<div class="row">
+												<div class="col-md-12">
+													<button class="btn btn-default">Rate</button>
+													<button class="btn btn-default">Write a review</button>
+												</div>
+											</div> -->
 									</div> <!-- ends:main-section -->
 								</div>
 							</div>
@@ -188,19 +202,18 @@
 
 							</div><!-- ends:table-wrap -->
 						</div>
-
 						<div style="display:none;" id="submit-form">
-							<form method="post" action="<?php echo base_url();?>checkout">
-								<div class="col-md-12">
-									<div class="availability-btn">
-										<span id="room_msg"></span><br/>
-										<input type="hidden" name="room_id" id="room_id" />
-										<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id;?>"/>
-										<input type="button" name="submit" value="Book Now" onclick="return validate_submit();" class="btn btn-default inn-button hor-form-btn">
-										<input type="submit" name="submit" value="Book Now" id="book_now" style="display:none;" class="btn btn-default inn-button hor-form-btn">
-									</div>
+						<form method="post" action="<?php echo base_url();?>checkout">
+							<div class="col-md-12">
+								<div class="availability-btn">
+									<span id="room_msg"></span><br/>
+									<input type="hidden" name="room_id" id="room_id" />
+									<input type="hidden" name="hotel_id" id="hotel_id" value="<?php echo $hotel_id;?>"/>
+									<input type="button" name="submit" value="Book Now" onclick="return validate_submit();" class="btn btn-default inn-button hor-form-btn">
+									<input type="submit" name="submit" value="Book Now" id="book_now" style="display:none;" class="btn btn-default inn-button hor-form-btn">
 								</div>
-							</form>
+							</div>
+						</form>
 						</div>
 					</div><!--ends:Aviability table -->
 					<div class="clear"></div>
@@ -257,9 +270,22 @@
 					</div>
 					<div class="clear"></div>	
 
+					<div class="row">
+						<div class="col-md-12">
+							<div class="details-head">
+								<h1>Comments</h1>
+							</div>
+						</div>
+						<div class='col-md-12'>
+							<div class=""></div>
+						</div>
+					</div>
+
 					
 				</div> <!-- ends:detail content -->
 			</div>
 		</div>
 	</div> <!-- ends:container -->
 </div>  <!-- ends:contents -->
+
+

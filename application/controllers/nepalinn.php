@@ -18,6 +18,15 @@ class Nepalinn extends CI_Controller {
 		$data['title'] = 'Nepalinn | Reviews';
 		$this->load->view('header', $data);
 		$this->load->view('reviews',$data);
+		$this->load->view('rate_review');
+		$this->load->view('footer');
+	}
+
+	public function contact()
+	{
+		$data['title'] = 'Nepalinn | Contact us';
+		$this->load->view('header', $data);
+		$this->load->view('contact',$data);
 		$this->load->view('footer');
 	}
 
@@ -143,6 +152,7 @@ class Nepalinn extends CI_Controller {
 		$data['title'] = 'Nepalinn | Search Result';
 		$this->load->view('header', $data);
 		$this->load->view('details');
+		$this->load->view('rate_review');
 		$this->load->view('footer');
 	}
 

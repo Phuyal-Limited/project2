@@ -462,6 +462,7 @@
 												<div class="clear-small"></div>
 												<input class="btn btn-detault inn-button" type="button" onclick="return get_hash();" value="Pay Deposit" />
 												<input class="btn btn-detault inn-button" style="display:none;" id="pay" type="submit" value="Pay Deposit" />
+												<button class="btn btn-default inn-button">Go back</button>
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->

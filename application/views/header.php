@@ -41,8 +41,7 @@
 							      <li><a href="<?php echo base_url(); ?>home">Home</a></li>
 							      <li><a href="#">About</a></li>
 							      <li><a href="#">Contact</a></li>
-							      <li><a href="#">Ipsum</a></li>
-							      <li><a href="#">Lorem</a></li>
+							      <li><a href="#">FAQ</a></li>
 							    </ul>
 						    </div>
 						  </div><!-- /.navbar-collapse -->
