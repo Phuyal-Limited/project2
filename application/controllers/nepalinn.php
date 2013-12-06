@@ -22,6 +22,22 @@ class Nepalinn extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function about()
+	{
+		$data['title'] = 'Nepalinn | About';
+		$this->load->view('header', $data);
+		$this->load->view('about',$data);
+		$this->load->view('footer');
+	}
+
+	public function faq()
+	{
+		$data['title'] = 'Nepalinn | FAQ';
+		$this->load->view('header', $data);
+		$this->load->view('faq',$data);
+		$this->load->view('footer');
+	}
+
 	public function contact()
 	{
 		$data['title'] = 'Nepalinn | Contact us';

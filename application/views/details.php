@@ -125,7 +125,7 @@
 								<label>Check Out:</label>
 								<input type="text" id="pick2" class="form-control datepicker" value="<?php echo $checkOutDate;?>" name="checkOutDate">
 							</div>
-							<input type='submit' class="btn btn-default inn-button hor-form-btn" value='Change' name='changeDate' />
+							<input type='submit' class="btn btn-default inn-button hor-form-btn" value='Change' name='changeDate' style="margin-top: 35px;" />
 						</form>
 						<div class='col-md-12'>
 							<div class="clear"></div>
@@ -151,7 +151,10 @@
 										</div>
 									</div>
 									<div class='col-md-1 col-xs-3 col-sm-2'>
-										
+										<div class=" room-display-head">
+											Price
+											<p>Per Room</p>
+										</div>
 									</div>
 								</div>  <!-- ends:head row -->
 
@@ -174,7 +177,7 @@
 													<p><?php echo $available_rooms[$i]['description']; ?></p>
 												</div>
 											</div>
-											<div class="col-md-8 col-xs-5 col-sm-6">
+											<div class="col-md-7 col-xs-5 col-sm-6">
 												<div class="room-select">
 													<div class="row">
 														<?php 
@@ -190,6 +193,11 @@
               												}
               											?>
 													</div>
+												</div>
+											</div>
+											<div class='col-md-1 col-xs-3 col-sm-2'>
+												<div class="room-display-price">
+													<span>NRs.</span> 2132.13
 												</div>
 											</div>
 										</div>
@@ -229,7 +237,7 @@
 							for($i=0;$i<$row;$i++){
 								if($hotel_facilities[$i][2]==1){								
 						?>
-						<div class="col-md-3 facility"><i class="fa fa-caret-right"></i> <?php echo strtoupper($hotel_facilities[$i][1]);?></div>
+						<div class="col-md-3 col-sm-6 col-xs-12 facility"><i class="fa fa-caret-right"></i> <?php echo strtoupper($hotel_facilities[$i][1]);?></div>
 						<?php
 								}
 							}
@@ -258,13 +266,13 @@
 						</div>
 						<div class="col-md-6">
 							<div class="row">
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-6 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
+								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
 							</div>
 						</div>
 					</div>

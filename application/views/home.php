@@ -1,7 +1,8 @@
 <div class="clear"></div>
 <div class="content"> <!-- starts:contents -->
 	<div class="container"  <!-- starts:container -->
-		<div class="row">
+
+		<div class="row"> <!-- Starts: Search div -->
 			<div class="col-md-12">
 				<form name='search' method='POST' action='result'>
 					<div class="main-search-wrap">
@@ -41,6 +42,46 @@
 					</div>
 				</form>
 			</div>
+		</div>  <!-- Ends: Search div -->
+		<div class="clear-big"></div>
+
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="home-info-containers">
+					<h1>Go?</h1>
+					<div class="thumbnail">
+						<img src="<?php echo base_url('assets/images/sample-image-1.jpg'); ?>">
+					</div>
+					<div class="home-info-content">
+						In publishing and graphic design, lorem ipsum is a placeholder text (filler text) commonly used to demonstrate the graphic elements of a document or visual ...
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="home-info-containers">
+					<h1>Stay?</h1>
+					<div class="thumbnail">
+						<img src="<?php echo base_url('assets/images/sample-image-2.jpg'); ?>">
+					</div>
+					<div class="home-info-content">
+						In publishing and graphic design, lorem ipsum is a placeholder text (filler text) commonly used to demonstrate the graphic elements of a document or visual ...
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<div class="home-info-containers">
+					<h1>Explore?</h1>
+					<div class="thumbnail">
+						<img src="<?php echo base_url('assets/images/sample-image-3.jpg'); ?>">
+					</div>
+					<div class="home-info-content">
+						In publishing and graphic design, lorem ipsum is a placeholder text (filler text) commonly used to demonstrate the graphic elements of a document or visual ...
+					</div>
+				</div>
+			</div>
 		</div>
+
 	</div> <!-- ends:container -->
 </div>  <!-- ends:contents -->

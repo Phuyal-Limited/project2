@@ -7,9 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>"> <!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.theme.min.css'); ?>"> <!-- bootstrap -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/font-awesome.min.css'); ?>">  <!-- Font-awesome -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/slider.css'); ?>">  <!-- Slider -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/demos.css'); ?>"> <!-- jquery ui -->
-	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> <!-- jquery ui -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery-ui.css'); ?>"> <!-- jquery ui -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>"> <!-- Custom css Nepal Inn -->
+	 <!-- less -->
+	 <link rel="stylesheet/less" type="text/css" href="slider.less" />
 	
 </head>
 <body>

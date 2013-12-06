@@ -3,9 +3,161 @@
 	<div class="container"  <!-- starts:container -->
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-12">
-				<div class='filter'> <!-- starts:filter -->
-					Filter Result
+				<div class='filter-head'> <!-- starts:filter -->
 				</div><!-- ends:filter -->
+				<div class="filter-content rounded">
+					<div class="row"> <!-- starts:filter-search -->
+						<div class='col-md-12'>
+							<div class="filter-search">
+								<div class="filter-result-head details-head">
+									<h1>Search Again</h1>
+								</div>
+								<div class="filter-form-row"> <!-- Starts:filter form row -->
+									<div class="row">
+										<div class="col-md-12">
+											<label>Destination</label>
+											<input type="text" class="form-control" placeholder="Destination" >	
+										</div>
+									</div>
+								</div>	<!-- Ends:filter form row -->
+
+								<div class="filter-form-row"> <!-- Starts:filter form row -->
+									<div class="row">
+										<div class="col-md-6">
+											<label>Check In</label>
+											<input type="text" placeholder="From" class="form-control datepicker" />
+										</div>
+
+										<div class="col-md-6">
+											<label>Check Out</label>
+											<input type="text" class="form-control datepicker" placeholder="To" />	
+										</div>
+									</div>
+								</div>	<!-- Ends:filter form row -->
+								<input type="submit" class="btn btn-default inn-button" value="Search">
+							</div>
+						</div>
+					</div> <!-- Ends:filter-search -->
+					<div class="clear"></div>
+
+					<div class='row'> <!-- starts:filter-result -->
+						<div class="col-md-12">
+							<div class="filter-result">
+								<div class="filter-result-head details-head">
+									<h1>Filter Result</h1>
+								</div>
+								 <div class="filter-option"> <!-- starts:filter option -->
+			                        <div class="title">
+			                        Room Type
+			                        </div>
+			                          <div class="values">
+			                            <a href=""></a>
+			                              <div class="values-list toggle">
+			                               
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+			                              </div>
+			                          </div>
+			                      </div> <!-- ends:filter option -->
+
+			                      <div class="filter-option"> <!-- starts:filter option -->
+			                        <div class="title">
+			                        Facilities
+			                        </div>
+			                          <div class="values">
+			                            <a href=""></a>
+			                              <div class="values-list toggle">
+			                               
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+			                              </div>
+			                          </div>
+			                      </div> <!-- ends:filter option -->
+
+			                      <div class="filter-option"> <!-- starts:filter option -->
+			                        <div class="title">
+			                        Rating
+			                        </div>
+			                          <div class="values">
+			                            <a href=""></a>
+			                              <div class="values-list toggle">
+			                               
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+		                                	<div class="value">
+		                                    	<label>
+		                                      		<input type="checkbox"><span>Option</span>
+		                                    	</label>
+		                                	</div>
+			                              </div>
+			                          </div>
+			                      </div> <!-- ends:filter option -->
+
+			                      <div class="filter-option"> <!-- starts:filter option -->
+			                        <div class="title">
+			                        Price Range
+			                        </div>
+			                          <div class="values">
+			                            <a href=""></a>
+			                              <div class="values-list toggle">
+			                              <b>From 400</b> <input type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" id="sl2" > <b>To 5000</b>
+			                              <p>***Working On It***</p>
+			                              </div>
+			                          </div>
+			                      </div> <!-- ends:filter option -->
+							</div>
+						</div>
+					</div><!-- Ends:filter-result -->
+				</div>
 			</div>
 			<div class="col-md-9 col-sm-9 col-xs-12">
 				<div class="result-content"> <!-- starts:result content -->
@@ -14,6 +166,7 @@
 					  <li><a href="#">Library</a></li>
 					  <li class="active">Data</li>
 					</ol> <!-- ends:breadcrumbs -->
+
 
 					<div class="row">
 						<div class="main-sarch-content">
