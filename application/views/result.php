@@ -8,6 +8,7 @@
 				<div class="filter-content rounded">
 					<div class="row"> <!-- starts:filter-search -->
 						<div class='col-md-12'>
+							<form name='search' method='POST' action='result'>
 							<div class="filter-search">
 								<div class="filter-result-head details-head">
 									<h1>Search Again</h1>
@@ -15,8 +16,14 @@
 								<div class="filter-form-row"> <!-- Starts:filter form row -->
 									<div class="row">
 										<div class="col-md-12">
-											<label>Destination</label>
-											<input type="text" class="form-control" placeholder="Destination" >	
+											<label>City</label>
+											<select class="form-control" name="city">
+												<option value="Pokhara" <?php echo ($searchInfo['city'] == "Pokhara")?'Selected':''; ?>>Pokhara</option>
+												<option value="Kathmandu" <?php echo ($searchInfo['city'] == "Kathmandu")?'Selected':''; ?>>Kathmandu</option>
+												<option value="Dharan" <?php echo ($searchInfo['city'] == "Dharan")?'Selected':''; ?>>Dharan</option>
+												<option value="Butwal" <?php echo ($searchInfo['city'] == "Butwal")?'Selected':''; ?>>Butwal</option>
+												<option value="Biratnagar" <?php echo ($searchInfo['city'] == "Biratnagar")?'Selected':''; ?>>Biratnagar</option>
+											</select>
 										</div>
 									</div>
 								</div>	<!-- Ends:filter form row -->
@@ -25,17 +32,18 @@
 									<div class="row">
 										<div class="col-md-6">
 											<label>Check In</label>
-											<input type="text" placeholder="From" class="form-control datepicker" />
+											<input type="text" name="checkInDate" placeholder="From" class="form-control datepicker" value="<?php echo $searchInfo['checkInDate']; ?>"/>
 										</div>
 
 										<div class="col-md-6">
 											<label>Check Out</label>
-											<input type="text" class="form-control datepicker" placeholder="To" />	
+											<input type="text" name="checkOutDate" class="form-control datepicker" placeholder="To" value="<?php echo $searchInfo['checkOutDate']; ?>"/>	
 										</div>
 									</div>
 								</div>	<!-- Ends:filter form row -->
 								<input type="submit" class="btn btn-default inn-button" value="Search">
 							</div>
+							</form>
 						</div>
 					</div> <!-- Ends:filter-search -->
 					<div class="clear"></div>

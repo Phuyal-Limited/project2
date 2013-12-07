@@ -131,7 +131,7 @@ class Nepalinn extends CI_Controller {
 			$current_info['checkOutDate']=$search_info['checkOutDate'];
 			$search_info=$current_info;
 		}
-		else if($this->session->userdata['searchInfo']){
+		else if($this->session->userdata('searchInfo')){
 			$this->session->unset_userdata('searchInfo');
 		}
 		$this->session->set_userdata('searchInfo',$search_info);
@@ -177,7 +177,7 @@ class Nepalinn extends CI_Controller {
 		$det = array('name' => 'testname', 'email' => 'testemail','country' => 'testcountry','address' => 'testaddr','phone' => 'testphn','passport_no' => '222');
 		$available=$this->rooms->get_available_templates(1,'2013-12-22','2013-12-24');
 		echo "<pre>";
-		print_r ($available);
+		$this->session->unset_userdata('searchInfo');
 	}
 
 	//function to get the hash digest and return to ajax call
