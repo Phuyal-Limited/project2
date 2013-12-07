@@ -198,20 +198,39 @@ class Rooms extends CI_Model{
 
 	
 	/*Function to return the starting room price of a hotel
-	  takes HotelID as argument
+	  takes list of available standard as argument
 	  return starting price
 	  By: Bidur Subedi
-	  Nov 30, 2013 */
-	public function get_start_price($hotelID)
+	  Nov 30, 2013 
+	  Modified: Dec 2, 2013
+	  Modified By: Bidur Subedi
+	  Modification: The function now returns the price of cheapest 'available' room*/
+	public function get_start_price($template_ids)
 	{
 		$this->db->select('rate');
-		$this->db->where('hotel_id',$hotelID);
+		$this->db->where_in('template_id',$template_ids);
 		$this->db->order_by('rate','asc');
 		$this->db->limit(1);
 		$rate=$this->db->get('room_templates/standards');
 		$rate=$rate->result();
 		$rate=get_object_vars($rate[0]);
 		return $rate['rate'];
+	}
+
+	
+	/*Function to return the list of available standards of a hotel
+	  takes list of hotel ID and range of dates
+	  returns a array of template ID
+	  By: Bidur Subedi
+	  Dec 2, 2013 */
+	public function get_available_templates($hotel_id,$checkin_date,$checkout_date)
+	{
+		$templates=$this->get_available_rooms($hotel_id,$checkin_date,$checkout_date);
+		$result = array();
+		foreach ($templates as $aTemplate) {
+			array_push($result, $aTemplate['template_id']);
+		}
+		return $result;
 	}
 }
 ?>

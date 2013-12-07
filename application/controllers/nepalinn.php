@@ -105,7 +105,8 @@ class Nepalinn extends CI_Controller {
 			$desc=$this->booking->get_hotel_details($id);
 			$desc[0] = get_object_vars($desc[0]);
 			$desc[0]['description']=word_limiter($desc[0]['description'],28);
-			$desc[0]['rate']=$this->rooms->get_start_price($id);
+			$templates=$this->rooms->get_available_templates($id,$searchInfo['checkInDate'],$searchInfo['checkOutDate']);
+			$desc[0]['rate']=$this->rooms->get_start_price($templates);
 			if($desc[0]['default_imgid'] != 0){
 				$image_det=$this->dbase->get_Image_Details($desc[0]['default_imgid']);
 				$image_det=get_object_vars($image_det[0]);
@@ -174,7 +175,7 @@ class Nepalinn extends CI_Controller {
 
 	public function test(){
 		$det = array('name' => 'testname', 'email' => 'testemail','country' => 'testcountry','address' => 'testaddr','phone' => 'testphn','passport_no' => '222');
-		$available=$this->guest->add_guest($det);
+		$available=$this->rooms->get_available_templates(1,'2013-12-22','2013-12-24');
 		echo "<pre>";
 		print_r ($available);
 	}
