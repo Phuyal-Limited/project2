@@ -744,3 +744,33 @@ text-decoration: none;
 	/*color: #858585 !important;*/
 	/*text-decoration: none;*/
 }
+
+.about-details p{
+	text-align: justify;
+	font-size: 16px;
+	margin-bottom:40px;
+	color: #7c7c7c;
+	line-height: 25px;
+}
+
+.about-details p:first-child{
+	font-size: 17px;
+}
+
+.about-details a{
+	color:#ed6f58;
+	text-decoration: none;
+}
+
+.about-details a:hover{
+	color:#7c7c7c;
+	text-decoration: none;
+}
+
+.para-title{
+	font-size: 18px;
+	font-weight: bold;
+	clear: both;
+	color: #5c5c5c;
+	text-align: center;
+}
