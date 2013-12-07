@@ -266,5 +266,18 @@ class Rooms extends CI_Model{
 		$ratings['average']=$this->get_average_rating($hotel_id);
 		return $ratings;
 	}
+
+	/*Function to return number of reviews
+	  takes hotel ID as input
+	  returns number of reviews
+	  By: Bidur Subedi
+	  Dec 7, 2013 */
+	public function get_num_of_reviews($hotel_id)
+	{
+		$this->db->from('review');
+		$this->db->where('hotel_id',$hotel_id);
+		$reviews=$this->db->count_all_results();
+		return $reviews;
+	}
 }
 ?>

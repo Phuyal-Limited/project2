@@ -115,6 +115,8 @@ class Nepalinn extends CI_Controller {
 				$image_det = array('path' => '', 'alt' => 'No Image');
 			}
 			$desc[0]['image']=$image_det;
+			$desc[0]['rating']=$this->rooms->get_average_rating($id);
+			$desc[0]['reviews']=$this->rooms->get_num_of_reviews($id);
 			array_push($result_details, $desc[0]);
 		}
 		$data['searchInfo']=$searchInfo;
@@ -162,7 +164,8 @@ class Nepalinn extends CI_Controller {
 		$data['hotelInfo']=$desc[0];
 		$data['checkInDate'] = $searchInfo['checkInDate'];
 		$data['checkOutDate'] = $searchInfo['checkOutDate'];
-
+		$data['ratings'] = $this->rooms->get_all_ratings($hotel_id);
+		$data['reviews'] = $this->rooms->get_num_of_reviews($hotel_id);
 		$data['hotel_facilities'] = $this->booking->get_hotel_facilities($hotel_id);
 		$data['available_rooms'] = $this->rooms->get_available_rooms($hotel_id, $searchInfo['checkInDate'], $searchInfo['checkOutDate']);
 		$data['hotel_id'] = $hotel_id;
@@ -174,7 +177,7 @@ class Nepalinn extends CI_Controller {
 	}
 
 	public function test(){
-		$det = $this->rooms->get_all_ratings(1);
+		$det = $this->rooms->get_num_of_reviews(1);
 		$available=$this->rooms->get_available_templates(1,'2013-12-22','2013-12-24');
 		
 		print_r($det);

@@ -58,18 +58,15 @@
 													<div class="col-md-12">
 														<div class="total-review">
 															<button class="btn btn-default" data-toggle="modal" data-target="#rate-modal" style="float:right; padding: 2px 12px;">Rate this Inn</button>
-															<p><span>Rating:73%</span> 13 Total Reviews</p>
+															<p><span>Rating:<?php echo $ratings['average']; ?>%</span> <?php echo $reviews; ?> Total Reviews</p>
 														</div>
 													</div>
 													<div class="rating-cat">
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
-														<div class='col-md-6'>Atmosphere <p>23%</p></div>
+														<div class='col-md-6'>Hospitality: <p><?php echo $ratings['friendliness']; ?>%</p></div>
+														<div class='col-md-6'>Services: <p><?php echo $ratings['services']; ?>%</p></div>
+														<div class='col-md-6'>Value: <p><?php echo $ratings['value']; ?>%</p></div>
+														<div class='col-md-6'>Cleanliness: <p><?php echo $ratings['cleanliness']; ?>%</p></div>
+														<div class='col-md-6'>Dining: <p><?php echo $ratings['dining']; ?>%</p></div>
 													</div>
 												</div>
 											</div>

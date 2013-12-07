@@ -232,7 +232,7 @@
 																	<p><?php echo $aResult['description'] ?><a href="<?php echo $url; ?>">more</a> </p>
 																</div>
 																<div class="search-review">
-																	<p><span>13</span> Total reviews </p>
+																	<p><span><?php echo $aResult['rating']; ?>%</span> <?php echo $aResult['reviews']; ?> Total reviews </p>
 																</div>
 															</div>
 															<div class="col-md-3">
