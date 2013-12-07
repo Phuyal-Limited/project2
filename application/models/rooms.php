@@ -232,5 +232,39 @@ class Rooms extends CI_Model{
 		}
 		return $result;
 	}
+
+	/*Function to return the average rating of a hotel
+	  takes hotel ID and rating title as input
+	  returns average rating percent
+	  By: Bidur Subedi
+	  Dec 7, 2013 */
+	public function get_average_rating($hotel_id,$title='average')
+	{
+		$this->db->select_avg($title);
+		$this->db->where('hotel_id',$hotel_id);
+		$result=$this->db->get('rating');
+		$rating=$result->result();
+		$rating=get_object_vars($rating[0]);
+		$rating=$rating[$title];
+		$rating=round($rating,2);
+		return $rating;
+	}
+
+	/*Function to return the average rating on all fields
+	  takes hotel ID as input
+	  returns array of average rating percent
+	  By: Bidur Subedi
+	  Dec 7, 2013 */
+	public function get_all_ratings($hotel_id)
+	{
+		$ratings = array();
+		$ratings['friendliness']=$this->get_average_rating($hotel_id,'friendliness');
+		$ratings['services']=$this->get_average_rating($hotel_id,'services');
+		$ratings['value']=$this->get_average_rating($hotel_id,'value');
+		$ratings['cleanliness']=$this->get_average_rating($hotel_id,'cleanliness');
+		$ratings['dining']=$this->get_average_rating($hotel_id,'dining');
+		$ratings['average']=$this->get_average_rating($hotel_id);
+		return $ratings;
+	}
 }
 ?>

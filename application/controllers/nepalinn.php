@@ -174,10 +174,10 @@ class Nepalinn extends CI_Controller {
 	}
 
 	public function test(){
-		$det = array('name' => 'testname', 'email' => 'testemail','country' => 'testcountry','address' => 'testaddr','phone' => 'testphn','passport_no' => '222');
+		$det = $this->rooms->get_all_ratings(1);
 		$available=$this->rooms->get_available_templates(1,'2013-12-22','2013-12-24');
-		echo "<pre>";
-		$this->session->unset_userdata('searchInfo');
+		
+		print_r($det);
 	}
 
 	//function to get the hash digest and return to ajax call
