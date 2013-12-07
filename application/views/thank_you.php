@@ -8,7 +8,6 @@
 			<?php print_r($this->session->userdata('booking')); ?>
 
 			<div class="thank-you-content">
-	            <pre><?php print_r($_POST); ?></pre>
 	            <p>Order details have been sent to <span>you@gmail.com</span>. Yourconfirmation code is <span>34343-343-3430</span>.</p>
 	            <p>Total transaction:<span>2342</span> </p>
 	            <p>lorem Ipsum:<span>asdf</span> </p>
