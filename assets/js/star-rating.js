@@ -1,40 +1,53 @@
 // This is the first thing we add ------------------------------------------
     $(document).ready(function() {
-    
 
-        $('.ratings_stars').hover(
-            // Handles the mouseover
-            function() {
-                $(this).prevAll().andSelf().addClass('ratings_over');
-                $(this).nextAll().removeClass('ratings_vote'); 
-            },
-            // Handles the mouseout
-            function() {
-                $(this).prevAll().andSelf().removeClass('ratings_over');
-                // can't use 'this' because it wont contain the updated data
-                set_votes($(this).parent());
+        $("#submit-rating").click(function(){
+
+            var hospitality = $("#hospitality_val").val();
+            var value = $("#value_val").val();
+            var services = $("#service_val").val();
+            var dining = $("#dining_val").val();
+            var cleanliness = $("#cleanliness_val").val();
+            var hotel_id = $("#hotel_id").val();
+            if(hospitality==''){
+                hospitality = 0;
             }
-        );
-        
-        
-        // This actually records the vote
-        $('.ratings_stars').bind('click', function() {
-            var star = this;
-            var widget = $(this).parent();
-            
-            var clicked_data = {
-                clicked_on : $(star).attr('class'),
-                widget_id : $(star).parent().attr('id')
-            };
-            $.post(
-                'ratings.php',
-                clicked_data,
-                function(INFO) {
-                    widget.data( 'fsr', INFO );
-                    set_votes(widget);
+            if(value==''){
+                value = 0;
+            }
+            if(services==''){
+                services = 0;
+            }
+            if(dining==''){
+                dining = 0;
+            }
+            if(cleanliness==''){
+                cleanliness = 0;
+            }
+            hospitality = hospitality*20;
+            value = value*20;
+            services = services*20;
+            dining = dining*20;
+            cleanliness = cleanliness*20;
+
+            $.ajax({
+                url: 'http://localhost/project2/rating_add',
+                type: 'post',
+                data: {
+                    hospitality: hospitality,
+                    value: value,
+                    services: services,
+                    dining: dining,
+                    cleanliness: cleanliness,
+                    hotel_id: hotel_id
                 },
-                'json'
-            ); 
+                success: function(response){
+                    alert(response);
+                    $("#rating-button").hide();
+                    rating();
+
+                }
+            });
         });
         
         

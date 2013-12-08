@@ -45,6 +45,7 @@
 
 
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script> <!-- jquery -->
+<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.raty.min.js'); ?>"></script> <!-- custom jquery -->
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.ui.core.js'); ?>"></script> <!-- jquery ui -->
 <script type="text/javascript" src="<?php echo base_url('assets/js/jq.js'); ?>"></script> <!-- custom jquery -->
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script> <!-- Bootstrap -->
@@ -89,6 +90,39 @@ if (top.location != location) {
     });
 
 
+
+		$(function(){
+			$("div#Hospitality").raty({
+				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
+				path: 'http://localhost/project2/assets/img/'
+			});
+
+			$("div#Value").raty({
+				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
+				path: 'http://localhost/project2/assets/img/'
+			});
+
+			$("div#Services").raty({
+				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
+				path: 'http://localhost/project2/assets/img/'
+			});
+
+			$("div#Dining").raty({
+				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
+				path: 'http://localhost/project2/assets/img/'
+			});
+
+			$("div#Cleanliness").raty({
+				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
+				path: 'http://localhost/project2/assets/img/'
+			});
+
+			$("#Hospitality :input").attr('id', 'hospitality_val');
+			$("#Value :input").attr('id', 'value_val');
+			$("#Services :input").attr('id', 'service_val');
+			$("#Dining :input").attr('id', 'dining_val');
+			$("#Cleanliness :input").attr('id', 'cleanliness_val');
+		});
 
     </script>
 </body>

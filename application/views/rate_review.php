@@ -8,85 +8,28 @@
       </div>
       <div class="modal-body">
         <!--starts content -->
-        	<div class='row'>
-        		<div class="col-md-6">
+        	<div id="ratings" class='row'>
+        		<?php 
+              for($i=0;$i<sizeof($rating_names);$i++){
+            ?>
+
+            <div class="col-md-6">
         			<div class="rate-stars">
-        				<div id="r1" class="rate_widget">
-					        <div class="star_1 ratings_stars"></div>
-					        <div class="star_2 ratings_stars"></div>
-					        <div class="star_3 ratings_stars"></div>
-					        <div class="star_4 ratings_stars"></div>
-					        <div class="star_5 ratings_stars"></div>
-					    </div>
+        				<div id="<?php echo $rating_names[$i]; ?>" style="width:10px;"></div>
         			</div>
-        			<p>Atmosphere</p>
+        			<p><?php echo $rating_names[$i]; ?></p>
         		</div>
-        		<div class="col-md-6">
-        			<div class="rate-stars">
-        				<div id="r1" class="rate_widget">
-					        <div class="star_1 ratings_stars"></div>
-					        <div class="star_2 ratings_stars"></div>
-					        <div class="star_3 ratings_stars"></div>
-					        <div class="star_4 ratings_stars"></div>
-					        <div class="star_5 ratings_stars"></div>
-					    </div>
-        			</div>
-        			<p>Atmosphere</p>
-        		</div>
-        		<div class="col-md-6">
-        			<div class="rate-stars">
-        				<div id="r1" class="rate_widget">
-					        <div class="star_1 ratings_stars"></div>
-					        <div class="star_2 ratings_stars"></div>
-					        <div class="star_3 ratings_stars"></div>
-					        <div class="star_4 ratings_stars"></div>
-					        <div class="star_5 ratings_stars"></div>
-					    </div>
-        			</div>
-        			<p>Atmosphere</p>
-        		</div>
-        		<div class="col-md-6">
-        			<div class="rate-stars">
-        				<div id="r1" class="rate_widget">
-					        <div class="star_1 ratings_stars"></div>
-					        <div class="star_2 ratings_stars"></div>
-					        <div class="star_3 ratings_stars"></div>
-					        <div class="star_4 ratings_stars"></div>
-					        <div class="star_5 ratings_stars"></div>
-					    </div>
-        			</div>
-        			<p>Atmosphere</p>
-        		</div>
-        		<div class="col-md-6">
-        			<div class="rate-stars">
-        				<div id="r1" class="rate_widget">
-					        <div class="star_1 ratings_stars"></div>
-					        <div class="star_2 ratings_stars"></div>
-					        <div class="star_3 ratings_stars"></div>
-					        <div class="star_4 ratings_stars"></div>
-					        <div class="star_5 ratings_stars"></div>
-					    </div>
-        			</div>
-        			<p>Atmosphere</p>
-        		</div>
-        		<div class="col-md-6">
-        			<div class="rate-stars">
-        				<div id="r1" class="rate_widget">
-					        <div class="star_1 ratings_stars"></div>
-					        <div class="star_2 ratings_stars"></div>
-					        <div class="star_3 ratings_stars"></div>
-					        <div class="star_4 ratings_stars"></div>
-					        <div class="star_5 ratings_stars"></div>
-					    </div>
-        			</div>
-        			<p>Atmosphere</p>
-        		</div>
+            
+            <?php 
+              }
+            ?>
+        		
         	</div>
         <!--ends content -->
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default inn-button" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default inn-button" id="submit-rating" data-dismiss="modal">Submit</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

@@ -774,3 +774,7 @@ text-decoration: none;
 	color: #5c5c5c;
 	text-align: center;
 }
+
+#ratings .rate-stars div img{
+	width: 13px;
+}

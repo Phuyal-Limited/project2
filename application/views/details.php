@@ -1,3 +1,4 @@
+<div id="test"></div>
 <div class="clear"></div>
 <div class="content"> <!-- starts:contents -->
 	<div class="container"  <!-- starts:container -->
@@ -53,39 +54,10 @@
 									</div> <!-- ends:image-section -->
 									<div class="col-md-9"><!-- starts:main-section -->
 										<div class='row'>
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-12">
-														<div class="total-review">
-															<button class="btn btn-default" data-toggle="modal" data-target="#rate-modal" style="float:right; padding: 2px 12px;">Rate this Inn</button>
-															<p><span>Rating:<?php echo $ratings['average']; ?>%</span> <?php echo $reviews; ?> Total Reviews</p>
-														</div>
-													</div>
-													<div class="rating-cat">
-														<div class='col-md-6'>Hospitality: <p><?php echo $ratings['friendliness']; ?>%</p></div>
-														<div class='col-md-6'>Services: <p><?php echo $ratings['services']; ?>%</p></div>
-														<div class='col-md-6'>Value: <p><?php echo $ratings['value']; ?>%</p></div>
-														<div class='col-md-6'>Cleanliness: <p><?php echo $ratings['cleanliness']; ?>%</p></div>
-														<div class='col-md-6'>Dining: <p><?php echo $ratings['dining']; ?>%</p></div>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="latest-review-head">
-													<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="float:right; padding: 2px 12px;">Write a review</button>
-													<p>Latest Review</p>
-													<div class="one-review">
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.
-														Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo <a href="">more</a></p>
-														<p><a href="">Read all reviews</a> </p>
-														
-														
 
+											<!--autoload rating and review-->
+											<div id="rating-reviews-show"></div>
 
-    
-													</div>
-												</div>
-											</div>
 										</div>
 										<div class="clear"></div>
 										<div class="row">

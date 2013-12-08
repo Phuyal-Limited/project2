@@ -170,6 +170,8 @@ class Nepalinn extends CI_Controller {
 		$data['available_rooms'] = $this->rooms->get_available_rooms($hotel_id, $searchInfo['checkInDate'], $searchInfo['checkOutDate']);
 		$data['hotel_id'] = $hotel_id;
 		$data['title'] = 'Nepalinn | Search Result';
+
+		$data['rating_names'] = array('Hospitality', 'Value', 'Services', 'Cleanliness', 'Dining');
 		$this->load->view('header', $data);
 		$this->load->view('details');
 		$this->load->view('rate_review');
@@ -258,6 +260,69 @@ class Nepalinn extends CI_Controller {
 			$this->load->view('header', $data);
 			$this->load->view('checkout');
 			$this->load->view('footer');
+		}
+	}
+
+	public function rating_add(){
+		if(!isset($_POST['hotel_id'])){
+			redirect('home');
+		}else{
+			$hospitality = $_POST['hospitality'];
+			$value = $_POST['value'];
+			$dining = $_POST['dining'];
+			$cleanliness = $_POST['cleanliness'];
+			$services = $_POST['services'];
+			$hotel_id = $_POST['hotel_id'];
+			
+			$avg = ($hospitality + $value + $dining + $cleanliness + $services)/5;
+			
+
+			$data = array(
+				'hotel_id' => $hotel_id,
+				'friendliness' => $hospitality, 
+				'services' => $services, 
+				'value' => $value, 
+				'cleanliness' => $cleanliness, 
+				'dining' => $dining,
+				'average' => $avg
+			);
+
+			$this->dbase->add_rating($data);
+
+
+			$hotels = array();
+			if($this->session->userdata('rated_hotel')){
+				$hotels = $this->session->userdata('rated_hotel');
+			}
+			if($hotels == array()){
+				$ids = array($hotel_id);
+				$this->session->set_userdata('rated_hotel',$ids);	
+			}else{
+				array_push($hotels, $hotel_id);
+				$this->session->unset_userdata('rated_hotel');
+				$this->session->set_userdata('rated_hotel',$hotels);
+			}
+
+			echo 'Thank you for rating.';
+
+		}
+	}
+
+	public function rating_reviews(){
+		if(!isset($_POST['hotel_id'])){
+			redirect('home');
+		}else{
+			$hotel_id = $_POST['hotel_id'];
+			$ratings = $this->rooms->get_all_ratings($hotel_id);
+			$num['reviews_no'] = $this->rooms->get_num_of_reviews($hotel_id);
+			$last_review = $this->rooms->get_last_review($hotel_id);
+			
+			
+			$hotel_IDs = $this->session->userdata('rated_hotel');
+
+			$details = array($ratings, $num, $last_review, $hotel_IDs);
+
+			print_r(json_encode($details));exit();
 		}
 	}
 }

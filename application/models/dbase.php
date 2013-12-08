@@ -63,6 +63,10 @@ class Dbase extends CI_Model{
 		return $checkout_details;
 	}
 
+
+	public function add_rating($data){
+		$this->db->insert('rating', $data);
+	}
 }
 
 ?>

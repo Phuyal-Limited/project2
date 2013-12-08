@@ -248,6 +248,7 @@ class Rooms extends CI_Model{
 		$rating=$rating[$title];
 		$rating=round($rating,2);
 		return $rating;
+
 	}
 
 	/*Function to return the average rating on all fields
@@ -260,7 +261,7 @@ class Rooms extends CI_Model{
 		$ratings = array();
 		$ratings['friendliness']=$this->get_average_rating($hotel_id,'friendliness');
 		$ratings['services']=$this->get_average_rating($hotel_id,'services');
-		$ratings['value']=$this->get_average_rating($hotel_id,'value');
+		$ratings['values']=$this->get_average_rating($hotel_id,'value');
 		$ratings['cleanliness']=$this->get_average_rating($hotel_id,'cleanliness');
 		$ratings['dining']=$this->get_average_rating($hotel_id,'dining');
 		$ratings['average']=$this->get_average_rating($hotel_id);
@@ -279,5 +280,31 @@ class Rooms extends CI_Model{
 		$reviews=$this->db->count_all_results();
 		return $reviews;
 	}
+
+	/*Function to return last review
+	  takes hotel ID as input
+	  returns last review
+	  By: mahesh thapa
+	  Dec 8, 2013 */
+	public function get_last_review($hotel_id){
+		$this->db->order_by('review_id', 'desc');
+		$this->db->where('hotel_id', $hotel_id);
+		$this->db->limit(1);
+		$review = $this->db->get('review');
+		$review = $review->result();
+		if($review==array())
+			$last_review = array(
+				'review_id' => '',
+				'hotel_id' => $hotel_id,
+				'title' => '',
+				'description' => '',
+				'date' => '',
+				'email' => ''
+			);
+		else
+			$last_review = get_object_vars($review[0]);
+		return $last_review;
+	}
+
 }
 ?>

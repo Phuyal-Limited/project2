@@ -1,5 +1,8 @@
 $(document).ready(function(){
   
+	//autoload rating
+	load_rating(1);
+
   	// slider
 	$(function() {
 		$("#slider-range").slider({
@@ -192,4 +195,63 @@ function validate_submit(){
 		return true;
 	}
 
+}
+
+
+//autoload the rating div
+//function to maintain autoload
+function load_rating(x){
+	if(x){
+		rating();
+	}
+	setInterval(function(){
+		rating();
+	},60000);
+}
+
+function rating(){
+	var hotel_id = $("#hotel_id").val();
+	$.ajax({
+		url: 'http://localhost/project2/rating_reviews',
+		type: 'post',
+		dataType: 'json',
+		data:{
+			hotel_id: hotel_id
+		},
+		success: function(response){
+			alert(response[3]);
+			var display = '';
+
+			display = '<div class="col-md-6">'+
+						'<div class="row">'+
+							'<div class="col-md-12">'+
+								'<div class="total-review">'+
+									'<button class="btn btn-default" id="rating-button" data-toggle="modal" data-target="#rate-modal" style="float:right; padding: 2px 12px;">Rate this Inn</button>'+
+									'<p><span>Rating:'+response[0].average+'%</span> '+response[1].reviews_no+' Total Reviews</p>'+
+								'</div>'+
+							'</div>'+
+							'<div class="rating-cat">'+
+								'<div class="col-md-6">Hospitality: <p>'+response[0].friendliness+'%</p></div>'+
+								'<div class="col-md-6">Services: <p>'+response[0].services+'%</p></div>'+
+								'<div class="col-md-6">Value: <p>'+response[0].values+'%</p></div>'+
+								'<div class="col-md-6">Cleanliness: <p>'+response[0].cleanliness+'%</p></div>'+
+								'<div class="col-md-6">Dining: <p>'+response[0].dining+'%</p></div>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+					'<div class="col-md-6">'+
+						'<div class="latest-review-head">'+
+							'<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="float:right; padding: 2px 12px;">Write a review</button>'+
+							'<p>Latest Review</p>'+
+							'<div class="one-review">'+
+								'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.'+
+								'Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo <a href="">more</a></p>'+
+								'<p><a href="">Read all reviews</a> </p>'+
+							'</div>'+
+						'</div>'+
+					'</div>';
+					
+				$("#rating-reviews-show").html(display);
+		}
+	});
 }
