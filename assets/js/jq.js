@@ -1,5 +1,6 @@
 $(document).ready(function(){
   
+
 	//autoload rating
 	load_rating(1);
 

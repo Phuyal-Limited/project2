@@ -778,3 +778,7 @@ text-decoration: none;
 #ratings .rate-stars div img{
 	width: 13px;
 }
+
+.range{
+	padding-right: 25px;
+}

@@ -157,8 +157,11 @@
 			                          <div class="values">
 			                            <a href=""></a>
 			                              <div class="values-list toggle">
-			                              <b>From 400</b> <input type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" id="sl2" > <b>To 5000</b>
-			                              <p>***Working On It***</p>
+			                              <div class="range">
+			                              	<b>From NRs400</b>
+				                              <input type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" id="sl2" >
+				                              <b>To NRs5000</b>
+			                              </div>
 			                              </div>
 			                          </div>
 			                      </div> <!-- ends:filter option -->
