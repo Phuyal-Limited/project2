@@ -10,19 +10,19 @@
             var cleanliness = $("#cleanliness_val").val();
             var hotel_id = $("#hotel_id").val();
             if(hospitality==''){
-                hospitality = 0;
+                hospitality = 2.5;
             }
             if(value==''){
-                value = 0;
+                value = 2.5;
             }
             if(services==''){
-                services = 0;
+                services = 2.5;
             }
             if(dining==''){
-                dining = 0;
+                dining = 2.5;
             }
             if(cleanliness==''){
-                cleanliness = 0;
+                cleanliness = 2.5;
             }
             hospitality = hospitality*20;
             value = value*20;
@@ -43,8 +43,8 @@
                 },
                 success: function(response){
                     alert(response);
-                    $("#rating-button").hide();
                     rating();
+                    $("#rating_button").hide();
 
                 }
             });

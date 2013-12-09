@@ -219,14 +219,26 @@ function rating(){
 			hotel_id: hotel_id
 		},
 		success: function(response){
-			alert(response[3]);
+			var ids = response[3];
+			var style = '';
+			if(ids==false){
+				//do nothing
+			}else{
+				var id = ids.split(',');
+				alert(ids);
+				for(var i=0;i<id.length;i++){
+					if(hotel_id==id[i]){
+						style = 'style="display:none;"';
+					}
+				}
+			}
 			var display = '';
 
 			display = '<div class="col-md-6">'+
 						'<div class="row">'+
 							'<div class="col-md-12">'+
 								'<div class="total-review">'+
-									'<button class="btn btn-default" id="rating-button" data-toggle="modal" data-target="#rate-modal" style="float:right; padding: 2px 12px;">Rate this Inn</button>'+
+									'<button class="btn btn-default" id="rating_button" '+style+' data-toggle="modal" data-target="#rate-modal" style="float:right; padding: 2px 12px;">Rate this Inn</button>'+
 									'<p><span>Rating:'+response[0].average+'%</span> '+response[1].reviews_no+' Total Reviews</p>'+
 								'</div>'+
 							'</div>'+

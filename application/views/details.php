@@ -166,7 +166,7 @@
 											</div>
 											<div class='col-md-1 col-xs-3 col-sm-2'>
 												<div class="room-display-price">
-													<span>NRs.</span> 2132.13
+													<span>NRs.</span> <?php echo $available_rooms[$i]['rate']; ?>
 												</div>
 											</div>
 										</div>
@@ -226,26 +226,6 @@
 						</div>
 					</div>
 					<div class="clear"></div>
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="details-head">
-								<h1>Reviews</h1>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="row">
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-								<div class="col-md-6 col-sm-6 col-xs-12 rate-review">Atmosphere</div>
-							</div>
-						</div>
-					</div>
-					<div class="clear"></div>	
 
 					<div class="row">
 						<div class="col-md-12">
