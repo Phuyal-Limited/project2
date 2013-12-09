@@ -221,17 +221,17 @@ function rating(){
 		success: function(response){
 			var ids = response[3];
 			var style = '';
+			
 			if(ids==false){
 				//do nothing
 			}else{
-				var id = ids.split(',');
-				alert(ids);
-				for(var i=0;i<id.length;i++){
-					if(hotel_id==id[i]){
+				for(var i=0;i<ids.length;i++){
+					if(hotel_id==ids[i]){
 						style = 'style="display:none;"';
 					}
 				}
 			}
+			
 			var display = '';
 
 			display = '<div class="col-md-6">'+
