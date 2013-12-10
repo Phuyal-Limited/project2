@@ -50,7 +50,7 @@
 											for($i=0;$i<$size;$i++){
 										?>
 										<div class="col-md-12">
-											<div class="room-row-wrap">
+											<div class="row room-row-wrap">
 												<div class="col-md-6 col-xs-4">
 													<div class="room-type">
 														<?php echo $checkout_details[$i]['template_name'];?>
@@ -70,7 +70,9 @@
 										<?php
 											}
 										?>
-										<div class="clear-big"></div>
+									</div> <!-- starts:room-row -->
+									<!-- <div class="clear-big"></div> -->
+									<div class="row">
 										<div class="col-md-12">
 											<div class="booking-totals">
 												<p>Total: <span>NRs. <?php echo $total; ?></span> </p>
@@ -81,7 +83,7 @@
 												</div>
 											</div>
 										</div>
-									</div> <!-- starts:room-row -->
+									</div>
 								</div>
 							</div>
 							<div class="clear-big"></div>
@@ -89,7 +91,7 @@
 						<form name="Form" action="https://mms.paymentsensegateway.com/Pages/PublicPages/PaymentForm.aspx" method="post" >
 			                  <input type="hidden" name="HashDigest" id="hash_digest" />
 			                  <input type="hidden" name="MerchantID" value="TESTGe-9778137" />
-			                  <input type="hidden" name="Amount" id="amount" value="<?php echo $deposit_pound; ?>" />
+			                  <input type="hidden" name="Amount" id="amount_value" value="<?php echo $deposit; ?>" />
 			                  <input type="hidden" name="CurrencyCode" value="826" />
 			                  <input type="hidden" name="OrderID" value="Hotel Booking Deposit" />
 			                  <input type="hidden" name="TransactionType" value="SALE" />
@@ -430,9 +432,9 @@
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
-										<label><input type="checkbox" name="pickup_req" id="pickup_req" value="1"><span>I would like the hotel to pick me up when I arrive</span></label> <br />
+										<label><input type="checkbox" name="pickup_req" id="pickup_req"  value="1"></label><span><label>I would like the hotel to pick me up when I arrive</span></label> <br />
 										<div class="clear"></div> <!-- clears some field below form-row -->
-										<div class="row" id="pickup-place-details">
+										<div class="row" style="display:none;" id="pickup-place-details">
 											<div class="col-md-3 col-sm-4 col-xs-4">
 												<label>Pickup Place:</label>
 											</div>
@@ -445,7 +447,7 @@
 											</div>
 										</div>
 										<div class="clear"></div> <!-- clears some field below form-row -->
-										<div class="row" id="pickup-time-details">
+										<div class="row" style="display:none;" id="pickup-time-details">
 											<div class="col-md-3 col-sm-4 col-xs-4">
 												<label>Pickup Time:</label>
 											</div>

@@ -395,6 +395,7 @@ label em{
 .room-row-wrap{
 	border-top: 2px solid #c7c7c7;
 	padding-top: 10px;
+	margin: 15px 0;
 }
 .room-row-wrap p{
 	padding-left: 20px;
@@ -781,4 +782,28 @@ text-decoration: none;
 
 .range{
 	padding-right: 25px;
+}
+
+.about-content{
+	color:#696969;
+}
+
+.about-block{
+	padding: 20px 50px;
+	min-height: 200px;
+	/*border: 2px solid #f7f7f7;*/
+	margin:14px 0;
+	transition: background 2s;
+}
+
+.about-block:hover{
+	background-color: #fff;
+	/*border: 2px solid #fff;*/
+}
+
+.about-block-title{
+	font-weight: bold;
+	font-size: 20px;
+	padding-bottom: 10px;
+	text-transform: uppercase;
 }

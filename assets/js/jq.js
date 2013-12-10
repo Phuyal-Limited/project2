@@ -22,7 +22,8 @@ $(document).ready(function(){
 
 
 	//display to choose pickup time and place when pickup request clicked
-  	$("#pickup_req").click(function(){
+  	$("#pickup_req").change(function(){
+  		
 		$("#pickup-place-details").toggle(1000);
 		$("#pickup-time-details").toggle(1000);
 		return false;
@@ -139,7 +140,7 @@ function select_room(i, j){
 
 function get_hash(){
 	var hotel_id = $("#hotel_id").val();
-	var amount = $("#amount").val();
+	var amount = $("#amount_value").val();
 	var orderDesc = $("#orderdescription").val();
 	var customerName = $("#CustomerName").val();
 	var email = $("#email").val();
