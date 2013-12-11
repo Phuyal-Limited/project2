@@ -179,10 +179,13 @@ class Nepalinn extends CI_Controller {
 	}
 
 	public function test(){
-		$det = $this->rooms->get_num_of_reviews(1);
-		$available=$this->rooms->get_available_templates(1,'2013-12-22','2013-12-24');
-		
-		print_r($det);
+		$this->load->library('email');
+		$this->email->from('your@example.com', 'Your Name');
+		$this->email->to('bidur@genesesofts.com'); 
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');	
+
+		$this->email->send();
 	}
 
 	//function to get the hash digest and return to ajax call
