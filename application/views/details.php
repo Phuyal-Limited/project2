@@ -214,7 +214,7 @@
 						
 					</div> <!-- ends:facilities -->
 					<div class="clear"></div>
-
+					<!--
 					<div class="row">
 						<div class="col-md-12">
 							<div class="details-head">
@@ -237,7 +237,7 @@
 							<div class=""></div>
 						</div>
 					</div>
-
+				-->
 					
 				</div> <!-- ends:detail content -->
 			</div>
