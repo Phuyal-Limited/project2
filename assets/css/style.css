@@ -476,6 +476,7 @@ label em{
 	font-size: 20px;
 	border: none;
 	margin:0;
+	text-transform: capitalize;
 }
 
 .hotel-name a{
