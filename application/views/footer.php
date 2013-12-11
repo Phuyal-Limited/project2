@@ -94,27 +94,27 @@ if (top.location != location) {
 		$(function(){
 			$("div#Hospitality").raty({
 				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
-				path: 'http://localhost/project2/assets/img/'
+				path: 'http://nepalinn.com/assets/img/'
 			});
 
 			$("div#Value").raty({
 				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
-				path: 'http://localhost/project2/assets/img/'
+				path: 'http://nepalinn.com/assets/img/'
 			});
 
 			$("div#Services").raty({
 				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
-				path: 'http://localhost/project2/assets/img/'
+				path: 'http://nepalinn.com/assets/img/'
 			});
 
 			$("div#Dining").raty({
 				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
-				path: 'http://localhost/project2/assets/img/'
+				path: 'http://nepalinn.com/assets/img/'
 			});
 
 			$("div#Cleanliness").raty({
 				hintList: ['bad', 'poor', 'regular', 'good', 'brilliant'],
-				path: 'http://localhost/project2/assets/img/'
+				path: 'http://nepalinn.com/assets/img/'
 			});
 
 			$("#Hospitality :input").attr('id', 'hospitality_val');

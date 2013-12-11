@@ -31,7 +31,7 @@
             cleanliness = cleanliness*20;
 
             $.ajax({
-                url: 'http://localhost/project2/rating_add',
+                url: 'http://nepalinn.com/rating_add',
                 type: 'post',
                 data: {
                     hospitality: hospitality,
