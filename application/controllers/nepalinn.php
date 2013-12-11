@@ -317,6 +317,7 @@ class Nepalinn extends CI_Controller {
 			$num['reviews_no'] = $this->rooms->get_num_of_reviews($hotel_id);
 			$last_review = $this->rooms->get_last_review($hotel_id);
 			
+			$review = $last_review['description'];
 			
 			$hotel_IDs = $this->session->userdata('rated_hotel');
 
