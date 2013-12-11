@@ -183,7 +183,9 @@ class Nepalinn extends CI_Controller {
 		$this->email->from('your@example.com', 'Your Name');
 		$this->email->to('bidur@genesesofts.com'); 
 		$this->email->subject('Email Test');
-		$this->email->message('Testing the <h1>email</h1> class.');	
+		$data['title'] = 'Nepalinn | About';
+		$msg=$this->load->view('header', $data, true);
+		$this->email->message($msg);	
 		$this->email->send();
 	}
 
