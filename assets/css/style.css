@@ -366,6 +366,9 @@ label em{
 .rate-review{
 	margin-bottom: 15px;
 }
+.facility i{
+	color:#ed6f58;
+}
 
 .room-display-head{
 	font-size: 16px;
