@@ -214,7 +214,7 @@ function load_rating(x){
 function rating(){
 	var hotel_id = $("#hotel_id").val();
 	$.ajax({
-		url: 'http://admin.nepalinn.com/rating_reviews',
+		url: 'http://nepalinn.com/rating_reviews',
 		type: 'post',
 		dataType: 'json',
 		data:{
