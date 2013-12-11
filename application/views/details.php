@@ -139,10 +139,10 @@
 									<div class="col-md-12">
 										<div class="room-row-wrap">
 											<div class="col-md-4 col-xs-4 col-sm-4">
-												<div class="room-type">
+												<div class="room-type" onclick="toggle_description(<?php echo $i;?>);">
 													<?php echo $available_rooms[$i]['name'];?>
 												</div>
-												<div class="room-type-desc">
+												<div class="room-type-desc" style="display:none;" id="show-description<?php echo $i;?>">
 													<p><?php echo $available_rooms[$i]['description']; ?></p>
 												</div>
 											</div>

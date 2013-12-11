@@ -269,3 +269,7 @@ function rating(){
 		}
 	});
 }
+
+function toggle_description(i){
+	$("#show-description"+i).toggle(1000);
+}
