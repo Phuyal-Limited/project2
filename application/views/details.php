@@ -206,7 +206,7 @@
 							for($i=0;$i<$row;$i++){
 								if($hotel_facilities[$i][2]==1){								
 						?>
-						<div class="col-md-3 col-sm-6 col-xs-12 facility"><i class="fa fa-caret-right"></i> <?php echo strtoupper($hotel_facilities[$i][1]);?></div>
+						<div class="col-md-3 col-sm-6 col-xs-12 facility"><i class="fa fa-check"></i> <?php echo strtoupper($hotel_facilities[$i][1]);?></div>
 						<?php
 								}
 							}
