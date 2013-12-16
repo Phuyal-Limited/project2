@@ -42,9 +42,9 @@
 						    <div class="inn-nav">
 						    	<ul class="nav navbar-nav navbar-right">
 							      <li><a href="<?php echo base_url(); ?>home">Home</a></li>
-							      <li><a href="#">About</a></li>
-							      <li><a href="#">Contact</a></li>
-							      <li><a href="#">FAQ</a></li>
+							      <li><a href="<?php echo base_url(); ?>about">About</a></li>
+							      <li><a href="<?php echo base_url(); ?>contact">Contact</a></li>
+							      <li><a href="<?php echo base_url(); ?>faq">FAQ</a></li>
 							    </ul>
 						    </div>
 						  </div><!-- /.navbar-collapse -->
@@ -58,4 +58,4 @@
 		</div> <!-- ends:header-main -->
 	</div>  <!-- ends:header -->
 	
-
+<input type="hidden" id="base_url" value="<?php echo base_url(); ?>" />

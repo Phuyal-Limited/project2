@@ -13,13 +13,44 @@ class Nepalinn extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	//reviews page for particular hotel
 	public function reviews()
 	{
-		$data['title'] = 'Nepalinn | Reviews';
-		$this->load->view('header', $data);
-		$this->load->view('reviews',$data);
-		$this->load->view('rate_review');
-		$this->load->view('footer');
+		$hotel_id = intval($this->uri->segment(2));
+		if(empty($hotel_id) || !is_int($hotel_id)){
+			redirect('home');		
+		}else{
+			$data['title'] = 'Nepalinn | Reviews';
+			
+			$data['rating_names'] = array('Hospitality', 'Value', 'Services', 'Cleanliness', 'Dining');
+			$desc=$this->booking->get_hotel_details($hotel_id);
+			$data['hotelInfo']=$desc[0];
+			$data['ratings'] = $this->rooms->get_all_ratings($hotel_id);
+			$data['reviews_no'] = $this->rooms->get_num_of_reviews($hotel_id);
+			$data['reviews'] = $this->dbase->get_Reviews($hotel_id);
+
+			$hotel_IDs = $this->session->userdata('rated_hotel');
+			if($hotel_IDs==false){
+				$hotel_IDs = array();
+			}
+			$data['rate_style'] = '';
+			if(in_array($hotel_id, $hotel_IDs)){
+				$data['rate_style'] = "display:none;";
+			}
+			$reviewed_hotel_IDs = $this->session->userdata('reviewed_hotel');
+			if($reviewed_hotel_IDs == false){
+				$reviewed_hotel_IDs = array();
+			}
+			$data['review_style'] = '';
+			if(in_array($hotel_id, $reviewed_hotel_IDs)){
+				$data['review_style'] = "display:none;";
+			}
+
+			$this->load->view('header', $data);
+			$this->load->view('reviews',$data);
+			$this->load->view('rate_review');
+			$this->load->view('footer');
+		}
 	}
 
 	public function about()
@@ -324,10 +355,46 @@ class Nepalinn extends CI_Controller {
 			$review = $last_review['description'];
 			
 			$hotel_IDs = $this->session->userdata('rated_hotel');
+			$reviewed_hotel_IDs = $this->session->userdata('reviewed_hotel');
 
-			$details = array($ratings, $num, $last_review, $hotel_IDs);
+			$details = array($ratings, $num, $last_review, $hotel_IDs, $reviewed_hotel_IDs);
 
 			print_r(json_encode($details));exit();
+		}
+	}
+
+	public function review_add(){
+		if(!isset($_POST['hotel_id'])){
+			redirect('home');
+		}else{
+			
+			$dateToday = date('Y-m-d');
+			$details = array(
+				'review_id' => '',
+				'hotel_id' => $_POST['hotel_id'],
+				'name' => $_POST['name'],
+				'review_txt' => $_POST['title'],
+				'description' => $_POST['desc'],
+				'date' => $dateToday
+			);
+
+			$this->dbase->add_review($details);
+
+			$hotels = array();
+			if($this->session->userdata('reviewed_hotel')){
+				$hotels = $this->session->userdata('reviewed_hotel');
+			}
+			if($hotels == array()){
+				$ids = array($details['hotel_id']);
+				$this->session->set_userdata('reviewed_hotel',$ids);	
+			}else{
+				array_push($hotels, $details['hotel_id']);
+				$this->session->unset_userdata('reviewed_hotel');
+				$this->session->set_userdata('reviewed_hotel',$hotels);
+			}
+
+			echo 'Thank you for reviewing.';
+
 		}
 	}
 }

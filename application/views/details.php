@@ -1,4 +1,3 @@
-<div id="test"></div>
 <div class="clear"></div>
 <div class="content"> <!-- starts:contents -->
 	<div class="container"  <!-- starts:container -->

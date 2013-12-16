@@ -12,8 +12,8 @@
 					<div class='row'>
 						<div class="col-md-12">
 							<div class="hotel-name">
-								<h1><a href="">Hotel Bidur Subedi</a></h1>
-								<p> lakeside, Pokhara</p>
+								<h1><a href=""><?php echo $hotelInfo->name; ?></a></h1>
+								<p><?php echo $hotelInfo->address; ?></p>
 							</div>
 						</div>
 					</div>
@@ -33,48 +33,49 @@
 									<div class="col-md-2">
 										<div class="rating-percentage">
 											<h2>Ratings</h2>
-											<span>88%</span>
-											<p>12 Total reviews</p>
+											<span><?php echo $ratings['average'].'%'; ?></span>
+											<p><?php echo $reviews_no; ?> Total reviews</p>
 										</div>
 									</div>
 									<div class="col-md-10">
 										<div class="row">
 											<div class="col-md-4">
 												<div class="rate-list">
-													<span>86%</span>
-													Atmosphere
+													<span><?php echo $ratings['friendliness'].'%'; ?></span>
+													Hospitality
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="rate-list">
-													<span>86%</span>
-													Atmosphere
+													<span><?php echo $ratings['services'].'%'; ?></span>
+													Services
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="rate-list">
-													<span>86%</span>
-													Atmosphere
+													<span><?php echo $ratings['values'].'%'; ?></span>
+													Value
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="rate-list">
-													<span>86%</span>
-													Atmosphere
+													<span><?php echo $ratings['cleanliness'].'%'; ?></span>
+													Cleanliness
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="rate-list">
-													<span>86%</span>
-													Atmosphere
+													<span><?php echo $ratings['dining'].'%'; ?></span>
+													Dining
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12" >
-											<button class="btn btn-default" data-toggle="modal" data-target="#rate-modal" style=" margin-left:40px; padding: 2px 12px;">Rate this Inn</button>
-											<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="padding: 2px 12px;">Write a review</button>
+											<input type="hidden" id="hotel_id" value="<?php echo $hotelInfo->hotel_id; ?>" />
+											<button class="btn btn-default" data-toggle="modal" data-target="#rate-modal" id="rating-button" style=" margin-left:40px; padding: 2px 12px; <?php echo $rate_style; ?>">Rate this Inn</button>
+											<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="padding: 2px 12px; <?php echo $review_style; ?>">Write a review</button>
 										</div>
 									</div>
 								</div>
@@ -109,27 +110,34 @@
 					</div>
 					<div class="clear"></div>
 
+					<?php
+						if(sizeof($reviews)==0){
+							echo "No reviews yet.";
+						}else{
+							for($i=0;$i<sizeof($reviews);$i++){
+
+					?>
 					<div class="row"><!-- starts:review-row -->
 						<div class="col-md-8">
 							<div class="review-row">
 								<div class="row">
 									<div class='col-md-3'>
 										<div class="user-desc">
-											<h3>Bidur Subedi</h3>
-											lakeside, Pokhara <br />
-											<em>Bidur Rated </em><span>80%</span>
+											<h3><?php echo $reviews[$i]['name']; ?></h3>
+											<!-- lakeside, Pokhara <br /> -->
+											<!-- <em><?php echo $reviews[$i]['name']; ?> Rated </em><span>80%</span> -->
 										</div>
 									</div>
 									<div class="col-md-9">
 										<div class="row">
 											<div class="col-md-12">
 												<div class='review-text'>
-													lorem ipsun dolor sit amet, lorem ipsun dolor sit amet, lorem ipsun dolor sit amet, lorem ipsun dolor sit amet,
+													<?php echo $reviews[$i]['description']; ?>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="review-footer">
-													<span>27th September 2013</span>
+													<span><?php echo $reviews[$i]['date']; ?></span>
 												</div>
 											</div>
 										</div>
@@ -138,36 +146,10 @@
 							</div>
 						</div>
 					</div><!-- ends:review-row -->
-
-					<div class="row"><!-- starts:review-row -->
-						<div class="col-md-8">
-							<div class="review-row">
-								<div class="row">
-									<div class='col-md-3'>
-										<div class="user-desc">
-											<h3>Bidur Subedi</h3>
-											lakeside, Pokhara <br />
-											<em>Bidur Rated </em><span>80%</span>
-										</div>
-									</div>
-									<div class="col-md-9">
-										<div class="row">
-											<div class="col-md-12">
-												<div class='review-text'>
-													lorem ipsun dolor sit amet, lorem ipsun dolor sit amet, lorem ipsun dolor sit amet, lorem ipsun dolor sit amet,
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="review-footer">
-													<span>27th September 2013</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
+					<?php 
+						}
+					}
+					?>
 					
 				</div> <!-- ends:detail content -->
 			</div>

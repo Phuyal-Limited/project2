@@ -156,9 +156,9 @@ function get_hash(){
 		pickup_req = 1;
 
 	}
-
+	var base_url = $("#base_url").val();
 	$.ajax({
-		url: 'calculate_hash',
+		url: base_url+'calculate_hash',
 		type: 'post',
 		data: {
 			amount: amount,
@@ -213,8 +213,9 @@ function load_rating(x){
 
 function rating(){
 	var hotel_id = $("#hotel_id").val();
+	var base_url = $("#base_url").val();
 	$.ajax({
-		url: 'http://nepalinn.com/rating_reviews',
+		url: base_url+'rating_reviews',
 		type: 'post',
 		dataType: 'json',
 		data:{
@@ -222,14 +223,25 @@ function rating(){
 		},
 		success: function(response){
 			var ids = response[3];
+			var reviewed_ids = response[4];
 			var style = '';
-			
+			var hide_style = '';
 			if(ids==false){
 				//do nothing
 			}else{
 				for(var i=0;i<ids.length;i++){
 					if(hotel_id==ids[i]){
 						style = 'style="display:none;"';
+					}
+				}
+			}
+
+			if(reviewed_ids==false){
+				//do nothing
+			}else{
+				for(var i=0;i<reviewed_ids.length;i++){
+					if(hotel_id==reviewed_ids[i]){
+						hide_style = 'display:none;';
 					}
 				}
 			}
@@ -255,12 +267,12 @@ function rating(){
 					'</div>'+
 					'<div class="col-md-6">'+
 						'<div class="latest-review-head">'+
-							'<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" style="float:right; padding: 2px 12px;">Write a review</button>'+
+							'<button class="btn btn-default" data-toggle="modal" data-target="#review-modal" id="review-button" style="float:right; padding: 2px 12px; '+hide_style+'">Write a review</button>'+
 							'<p>Latest Review</p>'+
 							'<div class="one-review">'+
-								'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante.'+
-								'Mauris eleifend, quam a vulputate dictum, massa quam dapibus leo <a href="">more</a></p>'+
-								'<p><a href="">Read all reviews</a> </p>'+
+								'<p>'+response[2].description+
+								'<a href="'+base_url+'reviews/'+hotel_id+'"> more</a></p>'+
+								'<p><a href="'+base_url+'reviews/'+hotel_id+'">Read all reviews</a> </p>'+
 							'</div>'+
 						'</div>'+
 					'</div>';

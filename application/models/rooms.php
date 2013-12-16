@@ -287,6 +287,7 @@ class Rooms extends CI_Model{
 	  By: mahesh thapa
 	  Dec 8, 2013 */
 	public function get_last_review($hotel_id){
+		$this->load->helper('text');
 		$this->db->order_by('review_id', 'desc');
 		$this->db->where('hotel_id', $hotel_id);
 		$this->db->limit(1);
@@ -296,13 +297,22 @@ class Rooms extends CI_Model{
 			$last_review = array(
 				'review_id' => '',
 				'hotel_id' => $hotel_id,
-				'title' => '',
+				'name' => '',
+				'review_txt' => '',
 				'description' => '',
-				'date' => '',
-				'email' => ''
+				'date' => ''
 			);
-		else
-			$last_review = get_object_vars($review[0]);
+		else{
+			$desc = word_limiter($review[0]->description,28);
+			$last_review = array(
+				'review_id' => $review[0]->review_id,
+				'hotel_id' => $hotel_id,
+				'name' => $review[0]->name,
+				'review_txt' => $review[0]->review_txt,
+				'description' => $desc,
+				'date' => $review[0]->date				
+			);
+		}
 		return $last_review;
 	}
 

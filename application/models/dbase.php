@@ -63,9 +63,30 @@ class Dbase extends CI_Model{
 		return $checkout_details;
 	}
 
-
+	//add rating
 	public function add_rating($data){
 		$this->db->insert('rating', $data);
+	}
+
+	//add review
+	public function add_review($data){
+		$this->db->insert('review', $data);	
+	}
+
+	//get all the reviews in descending order
+	public function get_Reviews($hotel_id){
+		$this->db->where('hotel_id', $hotel_id);
+		$this->db->order_by('review_id', 'desc');
+		$reviews = $this->db->get('review');
+		$reviews = $reviews->result();
+
+		$all = array();
+		for($i=0;$i<sizeof($reviews);$i++){
+			array_push($all, get_object_vars($reviews[$i]));
+		}
+
+		return $all;
+
 	}
 }
 

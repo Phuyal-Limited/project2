@@ -9,16 +9,16 @@
 				<div class="footer-sec-navs">
 					<ul>
 						<li>
-							<a href="">Home</a>
+							<a href="<?php echo base_url(); ?>home">Home</a>
 						</li>
 						<li>
-							<a href="">About</a>
+							<a href="<?php echo base_url(); ?>about">About</a>
 						</li>
 						<li>
-							<a href="">Contact</a>
+							<a href="<?php echo base_url(); ?>contact">Contact</a>
 						</li>
 						<li>
-							<a href="">FAQ</a>
+							<a href="<?php echo base_url(); ?>faq">FAQ</a>
 						</li>
 					</ul>
 				</div>

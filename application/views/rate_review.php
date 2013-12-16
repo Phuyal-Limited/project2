@@ -51,7 +51,7 @@
       					<label>Name:</label>
       				</div>
       				<div class="col-md-9">
-      					<input type="text" class="form-control" placeholder="Name">
+      					<input type="text" id="rev_name" name="name" class="form-control" placeholder="Name" />
       					<!-- <p class="form-info">Name is optional.</p> -->
       				</div>
       			</div>
@@ -59,21 +59,10 @@
 
       			<div class="row"> <!-- Starts:form-row -->	
       				<div class="col-md-3">
-      					<label>Email:<em>*</em></label>
-      				</div>
-      				<div class="col-md-9">
-      					<input type="text" class="form-control" required placeholder="Email Address">
-      					<p class="form-info">Email Address will not be published.</p>
-      				</div>
-      			</div>
-      			<div class="clear"></div><!-- Ends:form-row -->
-
-      			<div class="row"> <!-- Starts:form-row -->	
-      				<div class="col-md-3">
       					<label>Title:<em>*</em></label>
       				</div>
       				<div class="col-md-9">
-      					<input type="text" class="form-control" required placeholder="Email Address" required>
+      					<input type="text" id="title" name="title" class="form-control" />
       					<!-- <p class="form-info">Title is required.</p> -->
       				</div>
       			</div>
@@ -84,7 +73,7 @@
       					<label>Comment:<em>*</em></label>
       				</div>
       				<div class="col-md-9">
-      					<textarea class="form-control" ></textarea>
+      					<textarea id="desc" name="desc" class="form-control" ></textarea>
       				</div>
       			</div>
       			<div class="clear"></div><!-- Ends:form-row -->
@@ -94,8 +83,8 @@
 
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-default inn-button">Post</button>
-        <button type="button" class="btn btn-default inn-button" data-dismiss="modal">Close</button>
+      <button type="button" id="post_review" class="btn btn-default inn-button">Post</button>
+        <button type="button" id="close" class="btn btn-default inn-button" data-dismiss="modal">Close</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
