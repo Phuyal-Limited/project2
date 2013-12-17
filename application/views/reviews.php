@@ -30,14 +30,14 @@
 						<div class="col-md-12">
 							<div class="rate-and-review">
 								<div class="row">
-									<div class="col-md-2">
+									<div class="col-md-3">
 										<div class="rating-percentage">
 											<h2>Ratings</h2>
 											<span><?php echo $ratings['average'].'%'; ?></span>
 											<p><?php echo $reviews_no; ?> Total reviews</p>
 										</div>
 									</div>
-									<div class="col-md-10">
+									<div class="col-md-9">
 										<div class="row">
 											<div class="col-md-4">
 												<div class="rate-list">
@@ -131,13 +131,13 @@
 									<div class="col-md-9">
 										<div class="row">
 											<div class="col-md-12">
-												<div class='review-text'>
-													<?php echo $reviews[$i]['description']; ?>
+												<div class="review-date">
+													<span><?php echo $reviews[$i]['date']; ?></span>
 												</div>
 											</div>
 											<div class="col-md-12">
-												<div class="review-footer">
-													<span><?php echo $reviews[$i]['date']; ?></span>
+												<div class='review-text'>
+													<?php echo $reviews[$i]['description']; ?>
 												</div>
 											</div>
 										</div>
